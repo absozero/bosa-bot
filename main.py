@@ -45,12 +45,14 @@ async def on_message(message):
         await message.channel.send('Hi!')
 
     if message.content.startswith('-help'):
-        embud = discord.Embed(title='Help menu')
+        embud = discord.Embed(title='Help menu', color=0xF08080)
+        embud.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
         embud.add_field(name='Spam commands', value='-startspam: Spam help menu', inline=True)
         embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, and -im sad for a sad response. -bruh and -roast are for some very *special embeds')
         embud.set_footer(text='DM owner to turn on the bot.')
 
         await message.channel.send(embed=embud)
+
     if message.content.startswith('-hi'):
         await message.channel.send('Hey, how\'s it going?')
 
@@ -82,7 +84,12 @@ async def on_message(message):
 
         await message.channel.send(embed=myEmbed)
 
-    
+     if message.content.startswith('-startspam'):
+        ermbed = discord.Embed(title='Spam Menu', description='Write \'-startspm1\' to start spam in one channel, change the number upwards until the spam doesn\'t work to choose between what servers to spam in.(Ex: -startspm(number), -startspm2...) and \'-startspmall\' for spam in as many channels as I can, as well as \'-calmspm\' for a nice \'POGGERZ\' in one server every minute rather than second.\'-stopspam\' to stop the spamming.', color=0xF08080)
+        ermbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
+        ermbed.set_footer(text='DM owner to turn on the bot.')
+        
+        await message.channel.send(embed=ermbed)   
 
     if message.content.startswith('-me sad'):
         await message.channel.send('I\'m sorry about that UwU.(UwU is still in style, haters!)')
