@@ -46,8 +46,7 @@ async def on_message(message):
 
     if message.content.startswith('-help'):
         embud = discord.Embed(title='Help menu')
-        embud.add_field(name='Spam commands', value='-startspam: Spam help menu')
-        embud.add_field
+        embud.add_field(name='Spam commands', value='-startspam: Spam help menu', value=)
 
     if message.content.startswith('-hi'):
         await message.channel.send('Hey, how\'s it going?')
