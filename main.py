@@ -45,7 +45,7 @@ async def on_message(message):
         await message.channel.send('Hi!')
 
     if message.content.startswith('-help'):
-        embud = discord.Embed()
+        embud = discord.Embed(title='Help menu')
 
     if message.content.startswith('-hi'):
         await message.channel.send('Hey, how\'s it going?')
