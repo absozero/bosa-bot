@@ -44,6 +44,9 @@ async def on_message(message):
     if message.content.startswith('-hello'):
         await message.channel.send('Hi!')
 
+    if message.content.startswith('-help'):
+        
+
     if message.content.startswith('-hi'):
         await message.channel.send('Hey, how\'s it going?')
 
