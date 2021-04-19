@@ -48,6 +48,7 @@ async def on_message(message):
         embud = discord.Embed(title='Help menu')
         embud.add_field(name='Spam commands', value='-startspam: Spam help menu', inline=True)
         embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, and -im sad for a sad response. -bruh and -roast are for some very *special embeds')
+        embud.set_footer(text='DM owner to turn on the bot.')
 
         await message.channel.send(embed=embud)
     if message.content.startswith('-hi'):
