@@ -48,7 +48,7 @@ async def on_message(message):
         embud = discord.Embed(title='Help menu', color=0xF08080)
         embud.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
         embud.add_field(name='Spam commands', value='-startspam: Spam help menu', inline=True)
-        embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, and -im sad for a sad response. -bruh and -roast are for some very *special embeds')
+        embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, and -im sad for a sad response. -what for a confused response, and -bruh and -roast are for some very *special embeds', inline=True)
         embud.set_footer(text='DM owner to turn on the bot.')
 
         await message.channel.send(embed=embud)
