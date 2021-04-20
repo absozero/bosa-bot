@@ -141,7 +141,7 @@ async def on_message(message):
 @client.event
 async def on_ready():
     await client.change_presence(activity=Game(name="-help"))
-    print('Starting server')
+    print('Starting bot code')
     print('Bot prepared for use')
     print('We have logged in as {0.user}'.format(client))
     print('Running bot...')
