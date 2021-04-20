@@ -62,6 +62,9 @@ async def on_message(message):
     if message.content.startswith('-wassup'):
         await message.channel.send('Whats up')
 
+    if message.content.startswith('-what'):
+        await message.channel.send('Huh? Wait, what?')
+
     if message.content.startswith('-im sad'):
         await message.channel.send('Too bad')
 
