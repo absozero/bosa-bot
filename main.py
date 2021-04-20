@@ -95,7 +95,7 @@ async def on_message(message):
         await message.channel.send(embed=ermbed)   
 
     if message.content.startswith('-me sad'):
-        await message.channel.send('I\'m sorry about that UwU.(UwU is still in style, haters!). Anyways, don\'t worry. Look at the fun stuff in life!')
+        await message.channel.send('I\'m sorry about that UwU.(UwU is still in style, haters!). Anyways, don\'t worry at all. Look at the fun stuff in life!')
 
     if message.content.startswith('-startspam'):
         await message.channel.send('Write \'-startspm1\' to start spam in one channel, change the number upwards until the spam doesn\'t work to choose between what servers to spam in.(Ex: -startspm(number), -startspm2...) and \'-startspmall\' for spam in as many channels as I can, as well as \'-calmspm\' for a nice \'POGGERZ\' in one server every minute rather than second.\'-stopspam\' to stop the spamming.')
