@@ -67,8 +67,6 @@ async def on_message(message):
     if message.content.startswith('-ur bad'):
         await message.channel.send('Oof, that\'s just sad towards me. Now you\'ve made me sad :(')
 
-        await message.channel.send()
-
     if message.content.startswith('-what'):
         await message.channel.send('Huh? Wait, what?')
 
