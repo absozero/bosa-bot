@@ -48,8 +48,10 @@ async def on_message(message):
         embud = discord.Embed(title='Help menu', color=0xF08080)
         embud.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
         embud.add_field(name='Spam commands', value='-startspam: Spam help menu', inline=True)
-        embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, and -im sad for a sad response. -what for a confused response, and -bruh and -roast are for some very *special embeds', inline=True)
+        embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, and -im sad for a sad response. -bruh and -roast are for some very *special embeds', inline=False)
+        embud.add_field(name='Wholesome Commands', value='-wholesome for a wholesome gif(Not random gif, there is only one as of right now).', inline=False)
         embud.set_footer(text='DM owner to turn on the bot.')
+
 
         await message.channel.send(embed=embud)
 
@@ -64,6 +66,8 @@ async def on_message(message):
 
     if message.content.startswith('-ur bad'):
         await message.channel.send('Oof, that\'s just sad towards me. Now you\'ve made me sad :(')
+
+        await message.channel.send()
 
     if message.content.startswith('-what'):
         await message.channel.send('Huh? Wait, what?')
@@ -80,7 +84,17 @@ async def on_message(message):
         embed0.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
         
         await message.channel.send(embed=embed0)
+
+    if message.content.startswith('-wholesome'):
+        yo = discord.Embed(title='Wholesome', description='Just a wholesome gif.', color=0xF08080)
+        yo.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
+        yo.set_image(url='https://media.giphy.com/media/dsKiou8r9h2cjMuhr3/giphy-downsized-large.gif')
+        yo.set_footer(text='Hope you liked the wholesomeness!')
         
+        await message.channel.send(embed=yo)
+
+    if message.content.startswith('-im sad'):
+        await message.channel.send('Too bad')
     if message.content.startswith('-roast'):
        
         myEmbed = discord.Embed(title='One day, I woke up', description='Then I saw you, and decided to go into eternal sleep right after.', color=0x00ff00)
@@ -93,7 +107,8 @@ async def on_message(message):
 
         await message.channel.send(embed=myEmbed)
 
-     if message.content.startswith('-startspam'):
+    if message.content.startswith('-startspam'):
+      
         ermbed = discord.Embed(title='Spam Menu', description='Write \'-startspm1\' to start spam in one channel, change the number upwards until the spam doesn\'t work to choose between what servers to spam in.(Ex: -startspm(number), -startspm2...) and \'-startspmall\' for spam in as many channels as I can, as well as \'-calmspm\' for a nice \'POGGERZ\' in one server every minute rather than second.\'-stopspam\' to stop the spamming.', color=0xF08080)
         ermbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
         ermbed.set_footer(text='DM owner to turn on the bot.')
