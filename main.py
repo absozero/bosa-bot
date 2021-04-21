@@ -73,6 +73,9 @@ async def on_message(message):
     if message.content.startswith('-im sad'):
         await message.channel.send('Too bad')
 
+    if message.content.startswith('-no u'):
+        await message.channel.send('Enter -bruh')
+    
     if message.content.startswith('-bruh'):
         embed0 = discord.Embed(title='Uhh, what?', description='What did you say, \'bruh\'? I will kill u with my litten ex yaaaaa!', color=0xF08080)
         embed0.add_field(name='PUNISHMENT', value='You say bruh. I say Noooooooooooooooooooo youuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu!', inline=False)
