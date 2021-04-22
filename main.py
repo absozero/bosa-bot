@@ -2,6 +2,7 @@ import discord
 from discord.ext import tasks
 from discord.ext import commands
 from discord import Game
+import random
 
 
 client = discord.Client()
