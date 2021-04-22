@@ -49,11 +49,14 @@ async def on_message(message):
         embud.add_field(name='Spam commands', value='-startspam: Spam help menu', inline=True)
         embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, -what for asking, and -me sad for a hopeful response.', inline=True)
         embud.add_field(name='Funny commands', value=' -bruh and -roast are for funny embeds. -joke is for a literal joke. -no u is for, uh, idk.',inline=False)
-        embud.add_field(name='Wholesome Commands', value='-wholesome for a wholesome gif.', inline=True)
+        embud.add_field(name='Wholesome Commands', value='-wholesome for a wholesome gif, -knock knock for a knock knock joke.', inline=True)
         embud.add_field(name='Mean commands', value='-ur bad makes the mood bad with the bot.', inline=True)
         embud.set_footer(text='DM owner to turn on the bot.')
 
         await message.channel.send(embed=embud)
+
+    if message.content.startswith('-knock knock'):
+        await message.channel.send('Stop knocking!')
 
     if message.content.startswith('-hi'):
         await message.channel.send('Hey, how\'s it going?')
