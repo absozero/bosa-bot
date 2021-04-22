@@ -41,17 +41,16 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('-hello'):
-        await message.channel.send('Hi!')
 
     if message.content.startswith('-help'):
         embud = discord.Embed(title='Help menu', color=0xF08080)
         embud.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
         embud.add_field(name='Spam commands', value='-startspam: Spam help menu', inline=True)
-        embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, and -im sad for a sad response. -bruh and -roast are for some very *special embeds', inline=False)
-        embud.add_field(name='Wholesome Commands', value='-wholesome for a wholesome gif(Not random gif, there is only one as of right now).', inline=False)
+        embud.add_field(name='Casual commands', value='-hi for a casual greeting, -wassup for a dope start, -what for asking, and -me sad for a hopeful response.', inline=True)
+        embud.add_field(name='Funny commands', value=' -bruh and -roast are for funny embeds. -joke is for a literal joke. -no u is for, uh, idk.',inline=False)
+        embud.add_field(name='Wholesome Commands', value='-wholesome for a wholesome gif.', inline=True)
+        embud.add_field(name='Mean commands', value='-ur bad makes the mood bad with the bot.', inline=True)
         embud.set_footer(text='DM owner to turn on the bot.')
-
 
         await message.channel.send(embed=embud)
 
@@ -59,7 +58,7 @@ async def on_message(message):
         await message.channel.send('Hey, how\'s it going?')
 
     if message.channel.send('-joke'):
-        await message.channel.send('What did u saaayyyyyyyyyyyyyyyy?')
+        await message.channel.send('Enter insane joke here')
 
     if message.content.startswith('-wassup'):
         await message.channel.send('Whats up')
@@ -96,6 +95,7 @@ async def on_message(message):
 
     if message.content.startswith('-im sad'):
         await message.channel.send('Too bad')
+
     if message.content.startswith('-roast'):
        
         myEmbed = discord.Embed(title='One day, I woke up', description='Then I saw you, and decided to go into eternal sleep right after.', color=0x00ff00)
