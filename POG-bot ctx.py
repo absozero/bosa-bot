@@ -16,5 +16,5 @@ async def ping(ctx):
     await ctx.send('pong')
 
 
-client.run('ODI5MjM5OTQyNDk5NTMyODUw.YG1P4A.W8Lp8rqKIUjY4t7zt--RLTiI4aA')
+client.run('TOKEN HERE')
     
