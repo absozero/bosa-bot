@@ -1,9 +1,11 @@
 import discord
-from discord.ext import tasks,commands
-from discord import Game
-from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, wassup_ans, hi_ans
-from datetime import datetime
 import random
+import asyncio
+import os
+from discord.ext import tasks,commands
+from discord import Game, emoji
+from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, wassup_ans, hi_ans, Eightball_answers
+from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')
 
@@ -26,7 +28,7 @@ async def on_ready():
     print('Bot prepared for use')
     print('We have logged in as {0.user}'.format(bot))
     print('Running bot...')
-    
+
 
 @bot.command() 
 async def ping(ctx):
@@ -39,6 +41,14 @@ async def no_u(ctx):
 @bot.command()
 async def joke(ctx):
     await ctx.send(random.choice(jokes))
+
+@bot.command()
+async def dice(ctx):
+    await ctx.send(f'Your dice number is: {random.randint(1, 6)}')
+
+@bot.command()
+async def ball8(ctx):
+    await ctx.send(random.choice(Eightball_answers))
 
 @bot.command()
 async def hi(ctx):
@@ -79,6 +89,7 @@ async def wholesome(ctx):
 @bot.command()
 async def me_sad(ctx):
     await ctx.send(random.choice(me_sad_ans))
+
 
 @bot.command()
 async def bruh(ctx):
@@ -133,4 +144,6 @@ async def stopspam(ctx):
     spm1.stop()
 
 
-bot.run('TOKEN')
+
+bot.run('Token goes here')
+    
