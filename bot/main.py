@@ -35,6 +35,15 @@ async def ping(ctx):
     await ctx.send(f'{round(bot.latency * 1000)}' + 'ms')
 
 @bot.command()
+async def meme(ctx):
+    embed = discord.Embed(title="Post from r/memes.", description='Random meme from reddit', color=0xff0000)
+    async with aiohttp.ClientSession() as cs:
+        async with cs.get('https://www.reddit.com/r/memes/new.json?sort=hot') as r:
+            res = await r.json()
+            embed.set_image(url=res['data']['children'] [random.randint(0, 25)]['data']['url'])
+            await ctx.send(embed=embed, content=None)
+
+@bot.command()
 async def no_u(ctx):
     await ctx.send(random.choice(no_u_ans))
 
