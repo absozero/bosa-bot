@@ -3,6 +3,7 @@
 ## Info
 A discord spam bot that will become a general discord bot.
 - The bot is in a premature state.
+- - Therefore, it may be unstable and not work in some parts.
 - It is being actively developed
 
 ## Setup and Usage
