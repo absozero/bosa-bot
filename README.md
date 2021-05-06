@@ -4,6 +4,7 @@
 A discord spam bot that will become a general discord bot.
 - The bot is in a premature state.
 - It is being actively developed.
+- May be slightly unstable
 
 ## Setup and Usage
 - Requires python downloaded and the discord.py module
