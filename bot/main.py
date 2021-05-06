@@ -124,6 +124,10 @@ async def roast(ctx):
     await ctx.send(embed=myEmbed)
 
 @bot.command()
+async def boring(ctx):
+    ctx.send('Yeah, ok. You are boring. It\'s a fact!')
+
+@bot.command()
 async def startspam(ctx):
     ermbed = discord.Embed(title='Spam Menu', description='Write \'-startspm1\' to start spam in one channel, change the number upwards until the spam doesn\'t work to choose between what servers to spam in.(Ex: -startspm(number), -startspm2...) and \'-startspmall\' for spam in as many channels as I can. \'-stopspam\' to stop the spamming.', color=0xF08080)
     ermbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
