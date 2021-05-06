@@ -15,7 +15,9 @@ jokes = ['What did the traffic light say to the car? Don’t look! I’m about t
 me_sad_ans = ['It\'s okay, it will get better soon.',
  'There are people who care for you, you arenever all alone.',
  'Well, that\'s why I\'m here to talk with you!',
- 'Do things that you like to do!'
+ 'Do things that you like to do!',
+ 'Hey, it\'s ok! Are u okay?',
+ 'Are you alright?'
  ]
 
 #responses for ur_bad command
