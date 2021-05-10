@@ -8,7 +8,8 @@ A discord spam bot that will become a general discord bot.
 
 ## Setup and Usage
 - Requires python downloaded and the discord.py module
-- Fill in token and the ID's of two text channels in the main.py file in the bot folder. Then, run the main.py file.
+- Fill in token and the ID's of two text channels in the main.py file in the bot folder. 
+- Then, run the main.py file using '.
 
 ## Conclusion 
 
