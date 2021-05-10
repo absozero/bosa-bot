@@ -63,6 +63,10 @@ async def ball8(ctx):
 async def hi(ctx):
     await ctx.send(random.choice(hi_ans))
 
+@bot.command 
+async def eww(ctx):
+    await ctx.send("That's yucky!")
+
 @bot.command()
 async def ur_bad(ctx):
     await ctx.send(random.choice(ur_bad_ans))
