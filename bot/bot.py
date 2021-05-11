@@ -1,3 +1,5 @@
+#All import commands
+#I know there's a lot for a pretty simple bot :
 import discord
 import random
 import asyncio
