@@ -104,8 +104,8 @@ async def me_sad(ctx):
 
 @bot.command()
 async def bruh(ctx):
-    embed0 = discord.Embed(title='Uhh, what?', description='What did you say, \'bruh\'? I will kill u with my litten ex yaaaaa!', color=0xF08080)
-    embed0.add_field(name='PUNISHMENT', value='You say bruh. I say Noooooooooooooooooooo youuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu!', inline=False)
+    embed0 = discord.Embed(title='Uhh, what?', description='What did you say, \'bruh\'?', color=0xF08080)
+    embed0.add_field(name='PUNISHMENT', value='You say bruh. I say Noooooooooooooooooooo youuuuuuuuuuuuuuuuuuuuuu!', inline=False)
     embed0.set_thumbnail(url='https://i.kym-cdn.com/photos/images/original/001/507/393/910.jpg')
     embed0.set_image(url='https://media1.tenor.com/images/a59a51288bbc1cda522d5aec1978f12f/tenor.gif')
     embed0.set_footer(text='Remember to never mess with the pog bot', icon_url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eyw7aUKJ6AtkrElG4Nl-rAHaDt%26pid%3DApi&f=1')
@@ -120,20 +120,19 @@ async def roast(ctx):
     myEmbed.set_thumbnail(url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.1GdJUzMmarQqNeKjEVvdwQHaDt%26pid%3DApi&f=1')
     myEmbed.set_image(url='https://media2.giphy.com/media/cn9YaZ1gPc74vVJHWq/giphy.gif')
     myEmbed.add_field(name='U lost against me!', value='Bwahahaha', inline=False)
-    myEmbed.set_footer(text='U will never beat the pog bot Mwahahahahahahahahahah', icon_url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eyw7aUKJ6AtkrElG4Nl-rAHaDt%26pid%3DApi&f=1')
+    myEmbed.set_footer(text='U will never beat the pog bot!', icon_url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eyw7aUKJ6AtkrElG4Nl-rAHaDt%26pid%3DApi&f=1')
     myEmbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
 
     await ctx.send(embed=myEmbed)
 
 @bot.command()
 async def boring(ctx):
-    ctx.send('Yeah, ok. You are boring. It\'s a fact!')
+    ctx.send('You are boring. It\'s a fact!')
 
 @bot.command()
 async def startspam(ctx):
     ermbed = discord.Embed(title='Spam Menu', description='Write \'-startspm1\' to start spam in one channel, change the number upwards until the spam doesn\'t work to choose between what servers to spam in.(Ex: -startspm(number), -startspm2...) and \'-startspmall\' for spam in as many channels as I can. \'-stopspam\' to stop the spamming.', color=0xF08080)
     ermbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
-    ermbed.set_footer(text='DM owner to turn on the bot.')
         
     await ctx.send(embed=ermbed)
 
@@ -151,12 +150,11 @@ async def startspmall(ctx):
     spm.start()
     spm1.start()
 
-
 #Command to stop ALL of the spam commands. 
 #Will work regardless of how many 'spams' are going on, provided that they are included in the command
 @bot.command()
 async def stopspam(ctx):
-    await ctx.send('Terminating spam system')
+    await ctx.send('Ending spams')
     spm.stop()
     spm1.stop()
 
