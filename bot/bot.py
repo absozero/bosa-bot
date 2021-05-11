@@ -159,6 +159,6 @@ async def stopspam(ctx):
     spm1.stop()
 
 
-
+#Token area: You replace 'Token goes here' with the token you got from
 bot.run('Token goes here')
     
