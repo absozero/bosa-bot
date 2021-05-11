@@ -113,6 +113,7 @@ async def bruh(ctx):
 
     await ctx.send(embed=embed0)
 
+#An embed made to 'roast' the user who has entered the command 
 @bot.command()
 async def roast(ctx):
     myEmbed = discord.Embed(title='One day, I woke up', description='Then I saw you, and decided to go into eternal sleep right after.', color=0x00ff00)
