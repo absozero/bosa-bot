@@ -152,6 +152,8 @@ async def startspmall(ctx):
     spm1.start()
 
 
+#Command to stop ALL of the spam commands. 
+#Will work regardless of how many 'spams' are going on, provided that they are included in the command
 @bot.command()
 async def stopspam(ctx):
     await ctx.send('Terminating spam system')
@@ -161,4 +163,5 @@ async def stopspam(ctx):
 
 #Token area: You replace 'Token goes here' with the token you got from
 bot.run('Token goes here')
+
     
