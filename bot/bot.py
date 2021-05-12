@@ -29,6 +29,7 @@ async def on_ready():
     print('Bot prepared for use')
     print('We have logged in as {0.user}'.format(bot))
     print('Running bot...')
+    ctx.send('Bot has started, prepare to start the fun!)
 
 #Find bot connection ping and send in the chat
 @bot.command() 
