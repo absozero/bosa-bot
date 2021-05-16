@@ -1,3 +1,5 @@
-bot/*/
+# Byte-compiled / optimized / DLL files
+__pycache__/
 
+#Holds sensitive info that the bot needs to run: 
 sensitiveinfo.py
