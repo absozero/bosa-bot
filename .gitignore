@@ -1,0 +1,3 @@
+#Holds sensitive info that cannot be shared
+#Such as the token and some channel ID's
+sensitiveinfo.py

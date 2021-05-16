@@ -8,7 +8,8 @@ jokes = ['What did the traffic light say to the car? Don’t look! I’m about t
  'Bitter bought some butter but the butter was bitter so bitter bought some more butter to make the bitter butter better. Now say that 3 times real fast.',
  'BACTERIA 1: [runs toward pizza that has just been dropped on the floor] BACTERIA 2: [football tackles him to the ground] YOU HAVE TO WAIT FIVE SECONDS SEBASTIAN',
  '1st date: I love the spiderman movies Me: So do I [thinking of something to say to impress her] Me: I used to be a spider',
- 'Go to a fancy restaurant. Order the lobster. Order it alive. When it comes, order food for your new pet lobster. Then take lobster home.'
+ 'Go to a fancy restaurant. Order the lobster. Order it alive. When it comes, order food for your new pet lobster. Then take lobster home.',
+ 'Pennies smell nice. The zinc in them give a special smell, a tinge, of sorts.'
  ]
 
 #responses for me_sad command
@@ -16,15 +17,15 @@ me_sad_ans = ['It\'s okay, it will get better soon.',
  'There are people who care for you, you arenever all alone.',
  'Well, that\'s why I\'m here to talk with you!',
  'Do things that you like to do!',
- 'Hey, it\'s ok! Are u okay?',
- 'Are you alright?'
+ 'Find the good things in life and it will make u feel so much better'
  ]
 
 #responses for ur_bad command
 ur_bad_ans = ['Why u bully me?',
  'Don\'t you dare talk to me like that',
  'I do not accept that mean command :(',
- 'Bruh :('
+ 'Bruh :(',
+ 'Uno reverse card'
 ]
 
 #resposes for no u command
@@ -40,7 +41,8 @@ wassup_ans = ['Yo, what\'s good?',
  'Yo',
  'How\'s life?',
  'All good here, wbu?',
- 'Doing good, you?'
+ 'Doing good, you?',
+ '\'Sup?'
 ]
 
 #responses for hi command
