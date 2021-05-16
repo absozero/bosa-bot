@@ -1,8 +1,8 @@
 #Holds sensitive info that cannot be shared
 #Such as the token and some channel ID's
 
-sensitivinfo.py
+sensitiveinfo.py
 
 #Holds cache from python
 
-/__pycache__/
+**/__pycache__/
