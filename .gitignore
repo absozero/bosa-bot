@@ -2,4 +2,4 @@
 
 sensitiveinfo.py
 
-bot/__pycache__
+/pycache/*
