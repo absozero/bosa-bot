@@ -4,10 +4,10 @@ import asyncio
 import os
 import aiohttp
 #info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
-from info import token, channel1, channel2, roastgif
+from info import token, channel1, channel2
 from discord.ext import tasks,commands
 from discord import Game, emoji
-from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, wassup_ans, hi_ans, Eightball_answers
+from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, wassup_ans, hi_ans, Eightball_answers, roastgif
 from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')
@@ -119,7 +119,7 @@ async def roast(ctx):
     myEmbed = discord.Embed(title='One day, I woke up', description='Then I saw you, and decided to go into eternal sleep right after.', color=0x00ff00)
     myEmbed.add_field(name='Haha, u just got roasted!', value='Ooooooooooooooooooooooooooooooohhhhhhhhhhhhhhhhhhhhhhhhhhhhh', inline=False)
     myEmbed.set_thumbnail(url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.1GdJUzMmarQqNeKjEVvdwQHaDt%26pid%3DApi&f=1')
-    myEmbed.set_image(url='https://media2.giphy.com/media/cn9YaZ1gPc74vVJHWq/giphy.gif')
+    myEmbed.set_image(url=random.choice(roastgif))
     myEmbed.add_field(name='U lost against me!', value='Bwahahaha', inline=False)
     myEmbed.set_footer(text='U will never beat the pog bot Mwahahahahahahahahahah', icon_url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eyw7aUKJ6AtkrElG4Nl-rAHaDt%26pid%3DApi&f=1')
     myEmbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
