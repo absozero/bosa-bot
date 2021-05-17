@@ -33,14 +33,13 @@ async def on_ready():
     print('Bot prepared for use')
     print('We have logged in as {0.user}'.format(bot))
     print('Running bot...') 
-
+   
+   
 @bot.event
 async def on_message(message):
-    bad_words = badwords
-    async for bad_word in bad_words:
-        if any(bad_word in message for bad_word in bad_words):
-            await bot.send_message(message.channel, "{}, your message has been censored.".format(message.author.mention))
-            await bot.delete_message(message)
+  if any(word in message.content for word in badwords):
+    await message.delete()
+    await message.channel.send()
 
 
 @bot.command() 
