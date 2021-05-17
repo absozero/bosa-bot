@@ -3,16 +3,31 @@ import random
 import asyncio
 import os
 import aiohttp
+import json
 from discord.ext import tasks,commands
 from discord import Game, emoji
 #info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
-from info import token, channel1, channel2
 from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, bruhgif
 from index import wassup_ans, hi_ans, Eightball_answers, roastgif, wholesomegif
-from filtery import badwords
 from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')
+
+if os.path.exists(os.getcwd() + "/config.json"):
+    with open("./config.json") as f:
+        configdata = json.load(f)
+else:
+    configTemplate = {"Token": "",
+     "Channel1": "",
+      "Channel2": "",
+      }
+
+    with open(os.getcwd() + "/config.json", "w+") as f:
+        json.dump(configTemplate, f)
+
+token = configdata["Token"]
+channel1 = configdata["Channel1"]
+channel2 = configdata["Channel2"]
 
 
 @tasks.loop(seconds=1)
@@ -33,13 +48,6 @@ async def on_ready():
     print('Bot prepared for use')
     print('We have logged in as {0.user}'.format(bot))
     print('Running bot...') 
-   
-   
-@bot.event
-async def on_message(message):
-  if any(word in message.content for word in badwords):
-    await message.delete()
-    await message.channel.send()
 
 
 @bot.command() 
