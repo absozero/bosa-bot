@@ -78,4 +78,23 @@ roastgif = ['https://media.giphy.com/media/QCD6ewS5RgExTPlKlR/source.gif',
  'https://media.giphy.com/media/OOkjSbv0lTGg3GEZcU/giphy.gif'
  ]
 
+bruhgif = ['https://media.giphy.com/media/kWp8QC99Z6xFn8bF0v/giphy.gif',
+ 'https://media.giphy.com/media/NrqabhEpXWsGA/giphy.gif',
+ 'https://media.giphy.com/media/VIOkcgpsnA2Zy/giphy.gif',
+ 'https://media.giphy.com/media/VIOkcgpsnA2Zy/giphy.gif',
+ 'https://media.giphy.com/media/WUlzarOFoH7oaHM6Cm/giphy.gif',
+ 'https://media.giphy.com/media/l0HU3uWxRJ52SEmoU/giphy.gif',
+ 'https://media.giphy.com/media/dAuNlDibhVifdzSssb/giphy.gif',
+ ]
+
+wholesomegif = ['https://media.giphy.com/media/iXOoi6i2l9PZvCN0zU/giphy.gif',
+ 'https://media.giphy.com/media/c6Wwc9cT05vMdhyTcM/giphy.gif',
+ 'https://media.giphy.com/media/kxBCesJQRSF7B04efb/giphy.gif',
+ 'https://media.giphy.com/media/kxBCesJQRSF7B04efb/giphy.gif',
+ 'https://media.giphy.com/media/SVs0cQ0nLRsLNUadmn/giphy.gif',
+ 'https://media.giphy.com/media/ZlGEeefJJvjB1f1x4J/giphy.gif',
+ 'https://media.giphy.com/media/ZSL5yRpoVGmdpsQzwZ/giphy.gif',
+ 'https://media.giphy.com/media/9JnPplDndS0P4tDzij/giphy.gif',
+]
+
 

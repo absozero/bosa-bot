@@ -139,3 +139,6 @@ cython_debug/
 
 #Holds sensitive info that the bot needs to run: Token and channel ID's
 info.py
+
+#Holds profanity to block
+filtery.py

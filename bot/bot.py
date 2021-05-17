@@ -3,11 +3,13 @@ import random
 import asyncio
 import os
 import aiohttp
-#info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
-from info import token, channel1, channel2
 from discord.ext import tasks,commands
 from discord import Game, emoji
-from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, wassup_ans, hi_ans, Eightball_answers, roastgif
+#info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
+from info import token, channel1, channel2
+from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, bruhgif
+from index import wassup_ans, hi_ans, Eightball_answers, roastgif, wholesomegif
+from filtery import badwords
 from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')
@@ -31,6 +33,14 @@ async def on_ready():
     print('Bot prepared for use')
     print('We have logged in as {0.user}'.format(bot))
     print('Running bot...') 
+
+@bot.event
+async def on_message(message):
+    bad_words = badwords
+    async for bad_word in bad_words:
+        if any(bad_word in message for bad_word in bad_words):
+            await bot.send_message(message.channel, "{}, your message has been censored.".format(message.author.mention))
+            await bot.delete_message(message)
 
 
 @bot.command() 
@@ -94,7 +104,7 @@ async def time(ctx):
 async def wholesome(ctx):
     yo = discord.Embed(title='Wholesome', description='Just a wholesome gif.', color=0xF08080)
     yo.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
-    yo.set_image(url='https://media.giphy.com/media/dsKiou8r9h2cjMuhr3/giphy-downsized-large.gif')
+    yo.set_image(url=random.choice(wholesomegif))
     yo.set_footer(text='Hope you liked the wholesomeness!')
     await ctx.send(embed=yo)
 
@@ -108,7 +118,7 @@ async def bruh(ctx):
     embed0 = discord.Embed(title='Uhh, what?', description='What did you say, \'bruh\'? I will kill u with my litten ex yaaaaa!', color=0xF08080)
     embed0.add_field(name='PUNISHMENT', value='You say bruh. I say Noooooooooooooooooooo youuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu!', inline=False)
     embed0.set_thumbnail(url='https://i.kym-cdn.com/photos/images/original/001/507/393/910.jpg')
-    embed0.set_image(url='https://media1.tenor.com/images/a59a51288bbc1cda522d5aec1978f12f/tenor.gif')
+    embed0.set_image(url=random.choice(bruhgif))
     embed0.set_footer(text='Remember to never mess with the pog bot', icon_url='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.eyw7aUKJ6AtkrElG4Nl-rAHaDt%26pid%3DApi&f=1')
     embed0.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
 
