@@ -69,4 +69,13 @@ Eightball_answers = ["Simply yes",
  "Certainly maybe"
 ]
 
+roastgif = ['https://media.giphy.com/media/QCD6ewS5RgExTPlKlR/source.gif',
+ 'https://media.giphy.com/media/3o72FdkkjYpInhnd7y/giphy.gif',
+ 'https://media.giphy.com/media/1FMmC2fgLDHwhbE56I/giphy.gif',
+ 'https://media.giphy.com/media/8lT5KZ9zd3w0odjJsN/giphy.gif',
+ 'https://media.giphy.com/media/OOkjSbv0lTGg3GEZcU/giphy.gif'
+ 'https://media.giphy.com/media/OOkjSbv0lTGg3GEZcU/giphy.gif',
+ 'https://media.giphy.com/media/OOkjSbv0lTGg3GEZcU/giphy.gif'
+ ]
+
 

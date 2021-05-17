@@ -3,8 +3,8 @@ import random
 import asyncio
 import os
 import aiohttp
-#sensitiveinfo.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
-from sensitiveinfo import token, channel1, channel2
+#info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
+from info import token, channel1, channel2, roastgif
 from discord.ext import tasks,commands
 from discord import Game, emoji
 from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, wassup_ans, hi_ans, Eightball_answers
