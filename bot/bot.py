@@ -13,22 +13,12 @@ from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')
 
-if os.path.exists(os.getcwd() + "/config.json"):
-    with open("./config.json") as f:
-        configdata = json.load(f)
-else:
-    configTemplate = {"Token": "",
-     "Channel1": "",
-      "Channel2": "",
-      }
-
-    with open(os.getcwd() + "/config.json", "w+") as f:
-        json.dump(configTemplate, f)
-
-token = configdata["Token"]
-channel1 = configdata["Channel1"]
-channel2 = configdata["Channel2"]
-
+with open("POG-bot/bot/info.json") as f:
+    info = json.load(f)
+    
+token = info["Token"]
+channel1 = info["Channel1"]
+channel2 = info["Channel2"]
 
 @tasks.loop(seconds=1)
 async def spm():
@@ -40,15 +30,11 @@ async def spm1():
     channel = bot.get_channel(channel2)
     await channel.send("POGGERZ")
 
-
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=Game(name="-help"))
-    print('Starting bot code')
-    print('Bot prepared for use')
     print('We have logged in as {0.user}'.format(bot))
-    print('Running bot...') 
-
+    print('Bot has activated') 
 
 @bot.command() 
 async def ping(ctx):

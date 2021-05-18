@@ -138,4 +138,7 @@ dmypy.json
 cython_debug/
 
 #Holds sensitive info that the bot needs to run: Token and channel ID's
-config.json
+info.json
+
+#Holds words that are profane and must be banned
+badwords.txt
