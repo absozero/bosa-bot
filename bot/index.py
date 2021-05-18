@@ -96,9 +96,3 @@ wholesomegif = ['https://media.giphy.com/media/iXOoi6i2l9PZvCN0zU/giphy.gif',
  'https://media.giphy.com/media/ZSL5yRpoVGmdpsQzwZ/giphy.gif',
  'https://media.giphy.com/media/9JnPplDndS0P4tDzij/giphy.gif',
 ]
-
-badwrdresponse = ['Not a great word to say. Maybe a better word?',
- 'Come on! There\'s a better word than that!'
-]
-
-

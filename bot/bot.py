@@ -4,6 +4,7 @@ import asyncio
 import os
 import aiohttp
 import json
+import re
 from discord.ext import tasks,commands
 from discord import Game, emoji
 #info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
@@ -15,10 +16,15 @@ bot = commands.Bot(command_prefix = '-')
 
 with open("POG-bot/bot/info.json") as f:
     info = json.load(f)
-    
+
 token = info["Token"]
 channel1 = info["Channel1"]
 channel2 = info["Channel2"]
+
+with open("POG-bot/bot/words.txt", "r") as words:
+    f = words.readlines()
+
+words = [word.replace('/n', '') for word in f]
 
 @tasks.loop(seconds=1)
 async def spm():
@@ -30,11 +36,23 @@ async def spm1():
     channel = bot.get_channel(channel2)
     await channel.send("POGGERZ")
 
+
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=Game(name="-help"))
     print('We have logged in as {0.user}'.format(bot))
     print('Bot has activated') 
+
+
+@bot.event
+async def on_message(message):
+    text = message.content.lower()
+    for word in words:
+        if word in text:
+            await message.delete()
+            await message.channel.send(f'{message.author.mention}, please don\'t use that term here.') 
+    await bot.process_commands(message)
+
 
 @bot.command() 
 async def ping(ctx):
