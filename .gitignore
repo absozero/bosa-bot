@@ -141,4 +141,4 @@ cython_debug/
 info.json
 
 #Holds words that are profane and must be banned
-badwords.txt
+words.txt
