@@ -21,10 +21,8 @@ token = info["Token"]
 channel1 = info["Channel1"]
 channel2 = info["Channel2"]
 
-with open("POG-bot/bot/words.txt", "r") as words:
-    f = words.readlines()
-
-words = [word.replace('/n', '') for word in f]
+with open("POG-bot/bot/words.txt") as words:
+    f = words.read()
 
 @tasks.loop(seconds=1)
 async def spm():
@@ -43,11 +41,10 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
     print('Bot has activated') 
 
-
 @bot.event
 async def on_message(message):
     text = message.content.lower()
-    for word in words:
+    for word in f.splitlines():
         if word in text:
             await message.delete()
             await message.channel.send(f'{message.author.mention}, please don\'t use that term here.') 
