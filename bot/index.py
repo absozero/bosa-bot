@@ -1,5 +1,7 @@
 #data to respond to bot commands goes in this file
-
+#Data may be possibly moved to a .json or another format
+#As data sitting in a .py is inefficient. 
+ 
 #responses for joke command
 jokes = ['What did the traffic light say to the car? Don’t look! I’m about to change.',
  'Today at the bank, an old lady asked me to help check her balance. So I pushed her over.', 
@@ -45,6 +47,7 @@ Eightball_answers = ["Simply yes",
  "Certainly maybe"
 ]
 
+#gif to pick randomly for the roast command
 roastgif = ['https://media.giphy.com/media/QCD6ewS5RgExTPlKlR/source.gif',
  'https://media.giphy.com/media/3o72FdkkjYpInhnd7y/giphy.gif',
  'https://media.giphy.com/media/1FMmC2fgLDHwhbE56I/giphy.gif',
@@ -54,6 +57,7 @@ roastgif = ['https://media.giphy.com/media/QCD6ewS5RgExTPlKlR/source.gif',
  'https://media.giphy.com/media/OOkjSbv0lTGg3GEZcU/giphy.gif'
  ]
 
+#gif to pick randomly for the bruh command
 bruhgif = ['https://media.giphy.com/media/kWp8QC99Z6xFn8bF0v/giphy.gif',
  'https://media.giphy.com/media/NrqabhEpXWsGA/giphy.gif',
  'https://media.giphy.com/media/VIOkcgpsnA2Zy/giphy.gif',
@@ -63,6 +67,7 @@ bruhgif = ['https://media.giphy.com/media/kWp8QC99Z6xFn8bF0v/giphy.gif',
  'https://media.giphy.com/media/dAuNlDibhVifdzSssb/giphy.gif',
  ]
 
+#gif to pick randomly for the wholesome command
 wholesomegif = ['https://media.giphy.com/media/iXOoi6i2l9PZvCN0zU/giphy.gif',
  'https://media.giphy.com/media/c6Wwc9cT05vMdhyTcM/giphy.gif',
  'https://media.giphy.com/media/kxBCesJQRSF7B04efb/giphy.gif',

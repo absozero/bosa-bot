@@ -116,16 +116,16 @@ async def serverinfo(ctx):
 
     embed = discord.Embed(timestamp=ctx.message.created_at, color=ctx.author.color)
     embed.set_thumbnail(url=str(ctx.guild.icon_url))
-    embed.add_field(name='Name', value=f"{ctx.guild.name}", inline=False)
+    embed.add_field(name='Name', value=f"{ctx.guild.name}", inline=True)
     embed.add_field(name='Description', value=f"{ctx.guild.description}", inline=True)
     embed.add_field(name='Region', value=f"{ctx.guild.region}", inline=True)
     embed.add_field(name='ID', value=f"{ctx.guild.id}", inline=False)
-    embed.add_field(name='Owner', value=f"{ctx.guild.owner}", inline=False)
-    embed.add_field(name='Member Count', value=ctx.guild.member_count, inline=False)
+    embed.add_field(name='Owner', value=f"{ctx.guild.owner}", inline=True)
+    embed.add_field(name='Member Count', value=ctx.guild.member_count, inline=True)
     embed.add_field(name='Verification level', value=str(ctx.guild.verification_level), inline=False)
-    embed.add_field(name='Highest Role', value=ctx.guild.roles[-2], inline=False)
-    embed.add_field(name='Number of Roles', value=str(role_count), inline=False)
-    embed.add_field(name='Bots', value=', '.join(bot_list), inline=False)
+    embed.add_field(name='Highest Role', value=ctx.guild.roles[-2], inline=True)
+    embed.add_field(name='Number of Roles', value=str(role_count), inline=True)
+    embed.add_field(name='Bots', value=', '.join(bot_list), inline=True)
 
     await ctx.send(embed=embed)
 
