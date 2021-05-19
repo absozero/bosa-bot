@@ -125,7 +125,7 @@ async def serverinfo(ctx):
     embed.add_field(name='Verification level', value=str(ctx.guild.verification_level), inline=False)
     embed.add_field(name='Highest Role', value=ctx.guild.roles[-2], inline=True)
     embed.add_field(name='Number of Roles', value=str(role_count), inline=True)
-    embed.add_field(name='Bots', value=', '.join(bot_list), inline=True)
+    embed.add_field(name='Bots', value=', '.join(bot_list), inline=False)
 
     await ctx.send(embed=embed)
 
