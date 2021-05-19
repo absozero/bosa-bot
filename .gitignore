@@ -140,5 +140,3 @@ cython_debug/
 #Holds sensitive info that the bot needs to run: Token and channel ID's
 info.json
 
-#Holds words that are profane and must be banned
-words.txt
