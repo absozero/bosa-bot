@@ -73,6 +73,25 @@ async def ball8(ctx):
 async def hi(ctx):
     await ctx.send(random.choice(hi_ans))
 
+@bot.command()
+async def wassup(ctx):
+    await ctx.send(random.choice(wassup_ans))
+
+@bot.command()
+async def date_time(ctx):
+    now = datetime.now()
+    await ctx.send(f'This is the time in PST. Please transpose as required \n The year is: {now.year} \n The month is: {now.month} \n The day is: {now.day} \n The hour is: {now.hour} \n The minute is: {now.minute} \n The second is: {now.second} \n The microsecond is: {now.microsecond}')
+
+@bot.command()
+async def date(ctx):
+    now = datetime.now()
+    await ctx.send(f'The date is in PST: It is the year {now.year}, the month of the year is the {now.month}th month, and it is the {now.day}th day of said month. \n In other words, {now.month}-{now.day}-{now.year}.')
+
+@bot.command()
+async def time(ctx):
+    now = datetime.now()
+    await ctx.send(f'The date is in PST: It is the {now.hour}th hour of the day, the minutes are at {now.minute} for the hour, and the seconds are at {now.second}, while the miscroseconds are at {now.microsecond} \n In other words, the time is- {now.hour} : {now.minute} .{now.second} - ms:{now.microsecond}')
+
 @bot.command(aliases=["whois"])
 async def userinfo(ctx, member: discord.Member = None):
     if not member:  # if member is no mentioned
@@ -109,26 +128,6 @@ async def serverinfo(ctx):
     embed.add_field(name='Bots', value=', '.join(bot_list), inline=False)
 
     await ctx.send(embed=embed)
-
-@bot.command()
-async def wassup(ctx):
-    await ctx.send(random.choice(wassup_ans))
-
-@bot.command()
-async def date_time(ctx):
-    now = datetime.now()
-    await ctx.send(f'This is the time in PST. Please transpose as required \n The year is: {now.year} \n The month is: {now.month} \n The day is: {now.day} \n The hour is: {now.hour} \n The minute is: {now.minute} \n The second is: {now.second} \n The microsecond is: {now.microsecond}')
-
-@bot.command()
-async def date(ctx):
-    now = datetime.now()
-    await ctx.send(f'The date is in PST: It is the year {now.year}, the month of the year is the {now.month}th month, and it is the {now.day}th day of said month. \n In other words, {now.month}-{now.day}-{now.year}.')
-
-@bot.command()
-async def time(ctx):
-    now = datetime.now()
-    await ctx.send(f'The date is in PST: It is the {now.hour}th hour of the day, the minutes are at {now.minute} for the hour, and the seconds are at {now.second}, while the miscroseconds are at {now.microsecond} \n In other words, the time is- {now.hour} : {now.minute} .{now.second} - ms:{now.microsecond}')
-
 
 @bot.command()
 async def wholesome(ctx):
