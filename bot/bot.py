@@ -77,6 +77,8 @@ async def hi(ctx):
 async def wassup(ctx):
     await ctx.send(random.choice(wassup_ans))
 
+#Following commands are for telling time and date
+#It starts here
 @bot.command()
 async def date_time(ctx):
     now = datetime.now()
@@ -91,6 +93,7 @@ async def date(ctx):
 async def time(ctx):
     now = datetime.now()
     await ctx.send(f'The date is in PST: It is the {now.hour}th hour of the day, the minutes are at {now.minute} for the hour, and the seconds are at {now.second}, while the miscroseconds are at {now.microsecond} \n In other words, the time is- {now.hour} : {now.minute} .{now.second} - ms:{now.microsecond}')
+#And ends here
 
 @bot.command(aliases=["whois"])
 async def userinfo(ctx, member: discord.Member = None):
