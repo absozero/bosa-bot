@@ -8,8 +8,8 @@ import re
 from discord.ext import tasks,commands
 from discord import Game, emoji
 #info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
-from index import jokes, me_sad_ans, ur_bad_ans, no_u_ans, bruhgif
-from index import wassup_ans, hi_ans, Eightball_answers, roastgif, wholesomegif
+from index import jokes, bruhgif, roastgif, wholesomegif
+from index import wassup_ans, hi_ans, Eightball_answers
 from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')
@@ -36,7 +36,7 @@ async def spm1():
 async def on_ready():
     await bot.change_presence(activity=Game(name="-help"))
     print('We have logged in as {0.user}'.format(bot))
-    print('Bot has activated') 
+    print('Bot has been activated') 
 
 @bot.command() 
 async def ping(ctx):
@@ -47,10 +47,6 @@ async def ping(ctx):
 async def delete(ctx, texts: int):
     await ctx.channel.purge(limit=texts)
     await ctx.send(f'{texts} texts were deleted.'.format(texts), delete_after = 3)
-
-@bot.command()
-async def no_u(ctx):
-    await ctx.send(random.choice(no_u_ans))
 
 @bot.command()
 async def meme(ctx):
@@ -77,9 +73,42 @@ async def ball8(ctx):
 async def hi(ctx):
     await ctx.send(random.choice(hi_ans))
 
+@bot.command(aliases=["whois"])
+async def userinfo(ctx, member: discord.Member = None):
+    if not member:  # if member is no mentioned
+        member = ctx.message.author  # set member as the author
+    roles = [role for role in member.roles]
+    embed = discord.Embed(colour=discord.Colour.purple(), timestamp=ctx.message.created_at,
+                          title=f"User Info - {member}")
+    embed.set_thumbnail(url=member.avatar_url)
+    embed.set_footer(text=f"Requested by {ctx.author}")
+    embed.add_field(name="ID:", value=member.id)
+    embed.add_field(name="Display Name:", value=member.display_name)
+    embed.add_field(name="Created Account On:", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
+    embed.add_field(name="Joined Server On:", value=member.joined_at.strftime("%a, %#d %B %Y, %I:%M %p UTC"))
+    embed.add_field(name="Roles:", value="".join([role.mention for role in roles]))
+    embed.add_field(name="Highest Role:", value=member.top_role.mention)
+    await ctx.send(embed=embed)
+
 @bot.command()
-async def ur_bad(ctx):
-    await ctx.send(random.choice(ur_bad_ans))
+async def serverinfo(ctx):
+    role_count = len(ctx.guild.roles)
+    bot_list = [bot.mention for bot in ctx.guild.members if bot.bot]
+
+    embed = discord.Embed(timestamp=ctx.message.created_at, color=ctx.author.color)
+    embed.set_thumbnail(url=str(ctx.guild.icon_url))
+    embed.add_field(name='Name', value=f"{ctx.guild.name}", inline=False)
+    embed.add_field(name='Description', value=f"{ctx.guild.description}", inline=True)
+    embed.add_field(name='Region', value=f"{ctx.guild.region}", inline=True)
+    embed.add_field(name='ID', value=f"{ctx.guild.id}", inline=False)
+    embed.add_field(name='Owner', value=f"{ctx.guild.owner}", inline=False)
+    embed.add_field(name='Member Count', value=ctx.guild.member_count, inline=False)
+    embed.add_field(name='Verification level', value=str(ctx.guild.verification_level), inline=False)
+    embed.add_field(name='Highest Role', value=ctx.guild.roles[-2], inline=False)
+    embed.add_field(name='Number of Roles', value=str(role_count), inline=False)
+    embed.add_field(name='Bots', value=', '.join(bot_list), inline=False)
+
+    await ctx.send(embed=embed)
 
 @bot.command()
 async def wassup(ctx):
@@ -108,10 +137,6 @@ async def wholesome(ctx):
     yo.set_image(url=random.choice(wholesomegif))
     yo.set_footer(text='Hope you liked the wholesomeness!')
     await ctx.send(embed=yo)
-
-@bot.command()
-async def me_sad(ctx):
-    await ctx.send(random.choice(me_sad_ans))
 
 
 @bot.command()
