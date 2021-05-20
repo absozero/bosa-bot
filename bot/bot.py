@@ -1,3 +1,5 @@
+#Import statements
+
 import discord
 import random
 import asyncio
@@ -5,12 +7,19 @@ import os
 import aiohttp
 import json
 import re
+
 from discord.ext import tasks,commands
 from discord import Game, emoji
-#info.py needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
+#index.json needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
 from index import jokes, bruhgif, roastgif, wholesomegif
 from index import wassup_ans, hi_ans, Eightball_answers
 from datetime import datetime
+
+
+
+
+
+
 
 bot = commands.Bot(command_prefix = '-')
 
