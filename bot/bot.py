@@ -25,16 +25,6 @@ with open("BOSA-bot/bot/info.json") as f:
 
 token = info["Token"]
 
-@tasks.loop(seconds=1)
-async def spm():
-    channel = bot.get_channel(channel1)
-    await channel.send("POGGERZ")
-
-@tasks.loop(seconds=1)
-async def spm1():
-    channel = bot.get_channel(channel2)
-    await channel.send("POGGERZ")
-
 
 @bot.event
 async def on_ready():
