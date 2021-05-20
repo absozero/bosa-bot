@@ -14,9 +14,6 @@ from index import wassup_ans, hi_ans, Eightball_answers
 from index import jokes, roastgif, bruhgif, wholesomegif
 from datetime import datetime
 
-
-
-
 bot = commands.Bot(command_prefix = '-')
 bot.sniped_messages = {}
 
