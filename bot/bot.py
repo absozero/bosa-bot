@@ -10,13 +10,9 @@ import re
 
 from discord.ext import tasks,commands
 from discord import Game, emoji
-#index.json needs to be in the same directory as bot.py for bot.py to read and use the token and channels in sensitiveinfo.py.
-from index import jokes, bruhgif, roastgif, wholesomegif
 from index import wassup_ans, hi_ans, Eightball_answers
+from index import jokes, roastgif, bruhgif, wholesomegif
 from datetime import datetime
-
-
-
 
 
 
