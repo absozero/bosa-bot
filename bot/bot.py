@@ -14,7 +14,7 @@ from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')
 
-with open("POG-bot/bot/info.json") as f:
+with open("bot/info.json") as f:
     info = json.load(f)
 
 token = info["Token"]
