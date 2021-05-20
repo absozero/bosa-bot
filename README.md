@@ -12,7 +12,7 @@ A discord spam bot that will become a general discord bot.
 - Then, run the bot.py file using 'python bot.py in whatever terminal you use, make sure the terminal is at the directory the file is in.
 
 ##Another simple way to use
-- Add the bot to your server(bot requires admin permissions): https://discord.com/oauth2/authorize?client_id=829239942499532850&permissions=8&scope=bot
+- Add the bot to your server(bot requires admin permissions): https://discord.com/api/oauth2/authorize?client_id=844746051864363028&permissions=8&scope=bot
 
 ## Conclusion 
 
