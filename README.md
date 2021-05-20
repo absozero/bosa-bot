@@ -13,7 +13,10 @@ A discord spam bot that will become a general discord bot.
 
 ## Setup and Usage
 - Requires python downloaded and the discord.py module
-- Fill in token and the ID's of the two text channels in the bot.py file in the bot folder. 
+  [python(download with pip)](https://www.python.org/downloads)
+-Frst,e discord developer portal 
+  -[Discord developer portal](https://discord.com/developers/applications)
+
 - Then, run the bot.py file using 
 ```py
 python bot.py
@@ -22,6 +25,7 @@ python bot.py
 
 ##Another simple way to use
 - Add the bot to your server(bot requires admin permissions): https://discord.com/api/oauth2/authorize?client_id=844755365191352358&permissions=8&scope=bot
+- The bot will not be running all the time since I run it locally so the better option would definitely be to host it yourself.
 
 ## Conclusion 
 
