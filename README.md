@@ -6,7 +6,7 @@ A discord spam bot that will become a general discord bot.
 - May be slightly unstable
 
 
-**Version 2.0
+**Version 2.0**
 
 
 ## Setup and Usage
