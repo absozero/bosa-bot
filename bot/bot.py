@@ -51,6 +51,7 @@ async def on_message_delete(message):
 
 @bot.command()
 async def snipe(ctx):
+    '''Snipes the last message deleted while the bot is active and in a channel the bot can access'''
     try:
         contents, author, channel_name, time = bot.sniped_messages[ctx.guild.id]
         
@@ -66,6 +67,7 @@ async def snipe(ctx):
 
 @bot.command() 
 async def ping(ctx):
+    '''Sends the ping of the bot to the user'''
     await ctx.send(f'{round(bot.latency * 1000)}' + 'ms')
 
 #delete user-inputted number of texts before the command is given
@@ -82,6 +84,26 @@ async def reddit(ctx, reddit: str):
             res = await r.json()
             embed.set_image(url=res['data']['children'] [random.randint(0, 25)]['data']['url'])
             await ctx.send(embed=embed, content=None)
+
+@bot.command()
+async def channelstats(ctx):
+    """
+    Sends data about the current channel as long as the bot is in the channel and has the right permissions
+    """
+    channel = ctx.channel
+    embed = discord.Embed(title=f"Stat embed for **{channel.name}**", description=f"{'Category: {}'.format(channel.category.name) if channel.category else 'This channel is not in a category'}", color=0xff0000)
+    embed.add_field(name="Channel Guild", value=ctx.guild.name, inline=False)
+    embed.add_field(name="Channel Id", value=channel.id, inline=False)
+    embed.add_field(name="Channel Topic", value=f"{channel.topic if channel.topic else 'No topic.'}", inline=False)
+    embed.add_field(name="Channel Position", value=channel.position, inline=False)
+    embed.add_field(name="Channel Slowmode Delay", value=channel.slowmode_delay, inline=False)
+    embed.add_field(name="Channel is nsfw?", value=channel.is_nsfw(), inline=False)
+    embed.add_field(name="Channel is news?", value=channel.is_news(), inline=False)
+    embed.add_field(name="Channel Creation Time", value=channel.created_at, inline=False)
+    embed.add_field(name="Channel Permissions Synced", value=channel.permissions_synced, inline=False)
+    embed.add_field(name="Channel Hash", value=hash(channel), inline=False)
+
+    await ctx.send(embed=embed)
 
 @bot.command()
 async def joke(ctx):
