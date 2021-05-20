@@ -21,4 +21,6 @@ A discord spam bot that will become a general discord bot.
 
 - Have fun while using it! (Being actively developed by 1 person, so development may be slow.)
 
+##Website
+
 [Website(based on this readme)](https://absozero.github.io/BOSA-bot/)
