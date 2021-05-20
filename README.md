@@ -12,19 +12,25 @@ A discord spam bot that will become a general discord bot.
 
 
 ## Setup and Usage
-- Requires python downloaded and the discord.py module
-  [python(download with pip)](https://www.python.org/downloads)
--Frst,e discord developer portal 
+-Download source code from 'releases' tab on github or clone using git:
+```
+git clone https://github.com/absozero/BOSA-bot.git
+```
+- Requires **python downloaded** and the discord.py module
+  <https://www.python.org/downloads>
+-First,create an application on the discord developer portal 
   -[Discord developer portal](https://discord.com/developers/applications)
+  -After creating a bot in the bot tab, copy the token by press
 
-- Then, run the bot.py file using 
+- Then, ***run the bot.py*** file using 
 ```py
 python bot.py
 ```
--  in whatever terminal you use, make sure the terminal is at the directory the file is in.
+-  in whatever terminal you use, make sure the ***terminal is at the directory*** in which the file is in.
 
-##Another simple way to use
-- Add the bot to your server(bot requires admin permissions): https://discord.com/api/oauth2/authorize?client_id=844755365191352358&permissions=8&scope=bot
+## Another simple way to use
+- Add the bot to your server(bot requires admin permissions):
+- [Invite Link](https://discord.com/api/oauth2/authorize?client_id=844755365191352358&permissions=8&scope=bot)
 - The bot will not be running all the time since I run it locally so the better option would definitely be to host it yourself.
 
 ## Conclusion 
