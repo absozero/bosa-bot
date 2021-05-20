@@ -24,8 +24,6 @@ with open("BOSA-bot/bot/info.json") as f:
     info = json.load(f)
 
 token = info["Token"]
-channel1 = info["Channel1"]
-channel2 = info["Channel2"]
 
 @tasks.loop(seconds=1)
 async def spm():
@@ -40,7 +38,7 @@ async def spm1():
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=Game(name="-help"))
+    await bot.change_presence(activity=Game(name="-help : Don't DM me I only work right in servers, not in DM's."))
     print('We have logged in as {0.user}'.format(bot))
     print('Bot has been activated') 
 
@@ -86,22 +84,22 @@ async def reddit(ctx, reddit: str):
             await ctx.send(embed=embed, content=None)
 
 @bot.command()
-async def channelstats(ctx):
+async def channelinfo(ctx):
     """
-    Sends data about the current channel as long as the bot is in the channel and has the right permissions
+    Sends data about the current channel the command was run in as long as the bot is in the channel and has the right permissions
     """
     channel = ctx.channel
     embed = discord.Embed(title=f"Stat embed for **{channel.name}**", description=f"{'Category: {}'.format(channel.category.name) if channel.category else 'This channel is not in a category'}", color=0xff0000)
-    embed.add_field(name="Channel Guild", value=ctx.guild.name, inline=False)
-    embed.add_field(name="Channel Id", value=channel.id, inline=False)
-    embed.add_field(name="Channel Topic", value=f"{channel.topic if channel.topic else 'No topic.'}", inline=False)
-    embed.add_field(name="Channel Position", value=channel.position, inline=False)
-    embed.add_field(name="Channel Slowmode Delay", value=channel.slowmode_delay, inline=False)
-    embed.add_field(name="Channel is nsfw?", value=channel.is_nsfw(), inline=False)
-    embed.add_field(name="Channel is news?", value=channel.is_news(), inline=False)
-    embed.add_field(name="Channel Creation Time", value=channel.created_at, inline=False)
-    embed.add_field(name="Channel Permissions Synced", value=channel.permissions_synced, inline=False)
-    embed.add_field(name="Channel Hash", value=hash(channel), inline=False)
+    embed.add_field(name="Channel's Guild", value=ctx.guild.name, inline=False)
+    embed.add_field(name="Channel Id#", value=channel.id, inline=False)
+    embed.add_field(name="Channel's Topic", value=f"{channel.topic if channel.topic else 'No topic.'}", inline=False)
+    embed.add_field(name="Channel Position in channels", value=channel.position, inline=True)
+    embed.add_field(name="Channel's Slowmode delay", value=channel.slowmode_delay, inline=True)
+    embed.add_field(name="Channel is nsfw?", value=channel.is_nsfw(), inline=True)
+    embed.add_field(name="Channel is news?", value=channel.is_news(), inline=True)
+    embed.add_field(name="Channel's birth", value=channel.created_at, inline=True)
+    embed.add_field(name="Channel's Permission sync'", value=channel.permissions_synced, inline=True)
+    embed.add_field(name="Channel's Hash'", value=hash(channel), inline=False)
 
     await ctx.send(embed=embed)
 
@@ -207,14 +205,6 @@ async def roast(ctx):
     myEmbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
 
     await ctx.send(embed=myEmbed)
-
-@bot.command()
-async def startspam(ctx):
-    ermbed = discord.Embed(title='Spam Menu', description='Write \'-startspm1\' to start spam in one channel, change the number upwards until the spam doesn\'t work to choose between what servers to spam in.(Ex: -startspm(number), -startspm2...) and \'-startspmall\' for spam in as many channels as I can. \'-stopspam\' to stop the spamming.', color=0xF08080)
-    ermbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
-    ermbed.set_footer(text='DM owner to turn on the bot.')
-        
-    await ctx.send(embed=ermbed)
 
 
 #Token ----> goes right under 
