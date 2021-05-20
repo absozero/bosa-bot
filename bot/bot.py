@@ -18,8 +18,9 @@ from datetime import datetime
 
 
 bot = commands.Bot(command_prefix = '-')
+bot.sniped_messages = {}
 
-with open("bot/info.json") as f:
+with open("BOSA-bot/bot/info.json") as f:
     info = json.load(f)
 
 token = info["Token"]
@@ -43,6 +44,26 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
     print('Bot has been activated') 
 
+
+@bot.event
+async def on_message_delete(message):
+    bot.sniped_messages[message.guild.id] = (message.content, message.author, message.channel.name, message.created_at)
+
+@bot.command()
+async def snipe(ctx):
+    try:
+        contents, author, channel_name, time = bot.sniped_messages[ctx.guild.id]
+        
+    except:
+        await ctx.channel.send("The bot couldn't find a message to snipe!")
+        return
+
+    embed = discord.Embed(description=contents, color=discord.Color.purple(), timestamp=time)
+    embed.set_author(name=f"{author.name}#{author.discriminator}", icon_url=author.avatar_url)
+    embed.set_footer(text=f"Deleted in : #{channel_name}")
+
+    await ctx.channel.send(embed=embed)
+
 @bot.command() 
 async def ping(ctx):
     await ctx.send(f'{round(bot.latency * 1000)}' + 'ms')
@@ -54,10 +75,10 @@ async def delete(ctx, texts: int):
     await ctx.send(f'{texts} texts were deleted.'.format(texts), delete_after = 3)
 
 @bot.command()
-async def meme(ctx):
-    embed = discord.Embed(title="Post from r/memes.", description='Random meme from reddit', color=0xff0000)
+async def reddit(ctx, reddit: str):
+    embed = discord.Embed(title="Post from the subreddit of your choice(enter it in as -reddit [subreddit name]).", description='Random post from a subreddit of your choice', color=0xff0000)
     async with aiohttp.ClientSession() as cs:
-        async with cs.get('https://www.reddit.com/r/memes/new.json?sort=hot') as r:
+        async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
             res = await r.json()
             embed.set_image(url=res['data']['children'] [random.randint(0, 25)]['data']['url'])
             await ctx.send(embed=embed, content=None)
@@ -77,10 +98,6 @@ async def ball8(ctx):
 @bot.command()
 async def hi(ctx):
     await ctx.send(random.choice(hi_ans))
-
-@bot.command()
-async def wassup(ctx):
-    await ctx.send(random.choice(wassup_ans))
 
 #Following commands are for telling time and date
 #It starts here
@@ -176,38 +193,6 @@ async def startspam(ctx):
     ermbed.set_footer(text='DM owner to turn on the bot.')
         
     await ctx.send(embed=ermbed)
-
-@bot.command()
-async def startspm1(ctx):
-    spm.start()
-
-@bot.command()
-async def startspm2(ctx):
-    spm1.start()
-
-#Starting spamming in all channels, see 
-@bot.command()
-async def startspmall(ctx):
-    await ctx.send('I will now start spamming in as many channels as I can. Enter \'-stopspam\' to stop.')
-    spm.start()
-    spm1.start()
-
-
-#command to stop spamming
-@bot.command()
-async def stopspam(ctx):
-    await ctx.send('Terminating spam system')
-    spm.stop()
-    spm1.stop()
-
-@bot.command()
-async def cars(ctx):
-    embed = discord.Embed(title="Post from r/Autos.", description='Random Autos pic from reddit', color=0xff0000)
-    async with aiohttp.ClientSession() as cs:
-        async with cs.get('https://www.reddit.com/r/Autos/new.json?sort=hot') as r:
-            res = await r.json()
-            embed.set_image(url=res['data']['children'] [random.randint(0, 25)]['data']['url'])
-            await ctx.send(embed=embed, content=None)
 
 
 #Token ----> goes right under 
