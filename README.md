@@ -17,10 +17,10 @@ A discord spam bot that will become a general discord bot.
 git clone https://github.com/absozero/BOSA-bot.git
 ```
 - Requires **python downloaded** and the discord.py module
-  <https://www.python.org/downloads>
--First,create an application on the discord developer portal 
-  -[Discord developer portal](https://discord.com/developers/applications)
-  -After creating a bot in the bot tab, copy the token by press
+  - <https://www.python.org/downloads>
+- First,create an application on the discord developer portal 
+  - [Discord developer portal](https://discord.com/developers/applications)
+  - After creating a bot in the bot tab, copy the token by press
 
 - Then, ***run the bot.py*** file using 
 ```py
