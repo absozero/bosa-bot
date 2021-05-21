@@ -2,13 +2,13 @@
 
 ![Logo](https://cdn.discordapp.com/avatars/844755365191352358/9d8fd75f36f5bd4e2866e6fcd8acac26.png?size=128)
 
+
+**Version 2.0**
+
 ## Info
 A discord spam bot that will become a general discord bot.
 - It is being actively developed.
 - May be slightly unstable
-
-
-**Version 2.0**
 
 
 ## Downloading requirements to run the bot
