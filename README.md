@@ -73,7 +73,7 @@ cd YOURPATHTOTHEFOLDER/bot
 ```
   - Where **YOURPATHTOTHEFOLDER** is just the path to bot folder
 
-  -If you have any specifc problems on this part, [google](https://www.google.com/) may be a great place to go to.
+  -If you have any specific problems on this part, [google](https://www.google.com/) may be a great place to go to.
 
 - ***Don't change any of the files downloaded from github except the ones that were told to be changed unless you know what you are doing.***
 
