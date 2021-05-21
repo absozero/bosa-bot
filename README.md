@@ -27,6 +27,8 @@ git clone https://github.com/absozero/BOSA-bot.git
   ```
   pip install discord.py
   ```
+  ![pip](https://cdn.discordapp.com/attachments/829239591952580651/845095266939568158/unknown.png)
+
   - Congrats! You have finished ***downloading the requirements to run the bot!***
   
 ## Initial setup to run the bot 
@@ -71,6 +73,7 @@ python bot.py
 ```
 cd YOURPATHTOTHEFOLDER/bot
 ```
+![terminal](https://cdn.discordapp.com/attachments/829239591952580651/845095992504483910/unknown.png)
   - Where **YOURPATHTOTHEFOLDER** is just the path to bot folder
 
   -If you have any specific problems on this part, [google](https://www.google.com/) may be a great place to go to.
@@ -79,6 +82,7 @@ cd YOURPATHTOTHEFOLDER/bot
 
 - If you were able to run the command and ***two lines were printed in the terminal, then congrats! You have successfully ran your own instance*** of the bot!
 
+![printedlines](https://cdn.discordapp.com/attachments/829239591952580651/845096493429817385/unknown.png)
 - If there are error messages read the instructions in this README again and/or go to <https://www.google.com/> to find the reason for the error and the fixes.
 ## Another simple way to use
 - Add the bot to your server(bot requires admin permissions):
