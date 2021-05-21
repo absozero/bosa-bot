@@ -57,12 +57,14 @@ async def ping(ctx):
 #delete user-inputted number of texts before the command is given
 @bot.command()
 async def delete(ctx, texts: int):
+    '''A command to delete a number of texts specified by user; the usage would be: '-delete [any whole number']'.'''
     await ctx.channel.purge(limit=texts)
     await ctx.send(f'{texts} texts were deleted.'.format(texts), delete_after = 3)
 
 @bot.command()
 async def reddit(ctx, reddit: str):
-    embed = discord.Embed(title="Post from the subreddit of your choice(enter it in as -reddit [subreddit name]).", description='Random post from a subreddit of your choice', color=0xff0000)
+    ''' Send pictures from a reddit subreddit(enter it in as '-reddit [subreddit name]') '''
+    embed = discord.Embed(title="Post from the subreddit of your choice.", description='Random post from a subreddit of your choice', color=0xff0000)
     async with aiohttp.ClientSession() as cs:
         async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
             res = await r.json()
@@ -75,7 +77,7 @@ async def channelinfo(ctx):
     Sends data about the current channel the command was run in as long as the bot is in the channel and has the right permissions
     """
     channel = ctx.channel
-    embed = discord.Embed(title=f"Stat embed for **{channel.name}**", description=f"{'Category: {}'.format(channel.category.name) if channel.category else 'This channel is not in a category'}", color=0xff0000)
+    embed = discord.Embed(title=f"Channel stats for #**{channel.name}**", description=f"{'Category: {}'.format(channel.category.name) if channel.category else 'This channel is not in a category'}", color=0xff0000)
     embed.add_field(name="Channel's Guild", value=ctx.guild.name, inline=False)
     embed.add_field(name="Channel Id#", value=channel.id, inline=False)
     embed.add_field(name="Channel's Topic", value=f"{channel.topic if channel.topic else 'No topic.'}", inline=False)
@@ -191,6 +193,8 @@ async def roast(ctx):
     myEmbed.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
 
     await ctx.send(embed=myEmbed)
+
+#Add economy system
 
 
 #Token ----> goes right under 
