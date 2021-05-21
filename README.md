@@ -1,6 +1,6 @@
 # BOSA-bot
 
-![Logo](https://cdn.discordapp.com/attachments/829239591952580651/845202912182665226/1edeb3b1e7ec1697832eaae6031ac83d.png)
+![Logo](https://cdn.discordapp.com/avatars/844755365191352358/9d8fd75f36f5bd4e2866e6fcd8acac26.png?size=128)
 
 ## Info
 A discord spam bot that will become a general discord bot.
