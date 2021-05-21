@@ -22,7 +22,6 @@ with open("BOSA-bot/bot/info.json") as f:
 
 token = info["Token"]
 
-
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=Game(name="-help : Don't DM me I only work right in servers, not in DM's."))
