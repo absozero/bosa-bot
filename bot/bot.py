@@ -130,6 +130,13 @@ async def ping(ctx):
     -ping'''
     await ctx.send(f'{round(bot.latency * 1000)} ms. ⌚')
 
+@bot.command() 
+async def code(ctx):
+    '''Sends the source code of the bot to the user
+    usage:
+    -code'''
+    await ctx.send(f'https://github.com/absozero/BOSA-bot')  
+
 @bot.command(aliases=['time', 'date', 'second', 'ms', 'year', 'hour', 'date_time', 'week', 'day', 'timepls'])
 async def rn(ctx):
     now = datetime.now()
@@ -200,17 +207,26 @@ async def serverinfo(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
-async def reddit(ctx, reddit: str):
+async def reddit(ctx, *, reddit: str):
     ''' Send pictures from a reddit subreddit 
     usage:
     -reddit [subreddit name] '''
-    embed = discord.Embed(title="Post from the subreddit of your choice.", description='Random post from a subreddit of your choice', color=0xff0000)
+    embed = discord.Embed(title=f"A Post from r/{reddit}.", description=f'Random picture from r/{reddit}', color=0xff0000)
     async with aiohttp.ClientSession() as cs:
         async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
             res = await r.json()
             embed.set_image(url=res['data']['children'] [random.randint(0, 25)]['data']['url'])
             await ctx.send(embed=embed, content=None)
 
+@bot.command()
+async def urbdict(ctx, *, query: str):
+    await ctx.send('Here is your search from the urban dictionary')
+    await ctx.send(f'https://www.urbandictionary.com/define.php?term={query}')
+
+@bot.command()
+async def defen(ctx, *, search: str):
+    await ctx.send('Here is your search from the merriam-webster dictionary')
+    await ctx.send(f'https://www.merriam-webster.com/dictionary/{search}')
 
 @bot.command(pass_context=True)
 async def giphy(ctx, *, search):
@@ -231,6 +247,11 @@ async def giphy(ctx, *, search):
     await session.close()
 
     await ctx.send(embed=embed)
+
+@bot.command()
+async def twitch(ctx, *, search: str):
+    await ctx.send('Here is the stream you searched for:')
+    await ctx.send(f'https://twitch.tv/{search}')
 
 
 @bot.command(aliases=['yt'])
