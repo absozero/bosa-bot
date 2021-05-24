@@ -84,7 +84,7 @@ async def dice(ctx):
 
 @bot.command()
 async def ball8(ctx):
-    await ctx.send(random.choice(Eightball_answers) + ' 🎱')
+        await ctx.send(random.choice(Eightball_answers) + ' 🎱')
 
 @bot.command()
 async def hi(ctx):
@@ -140,6 +140,7 @@ async def code(ctx):
 @bot.command(aliases=['time', 'date', 'second', 'ms', 'year', 'hour', 'date_time', 'week', 'day', 'timepls'])
 async def rn(ctx):
     now = datetime.now()
+
     await ctx.send(f'This is the time in PST. Please transpose as required \n The year is: {now.year} \n The month is: {now.month} \n The day is: {now.day} \n The hour is: {now.hour} \n The minute is: {now.minute} \n The second is: {now.second} \n The microsecond is: {now.microsecond} \n ⏲️')
     await ctx.send(f"Also known as '{now.month}-{now.day}-{now.year} {now.hour}:{now.minute}:{now.second}.{now.microsecond}'")
 
@@ -207,51 +208,61 @@ async def serverinfo(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
-async def reddit(ctx, *, reddit: str):
+async def reddit(ctx, reddit: str, number: int):
     ''' Send pictures from a reddit subreddit 
     usage:
     -reddit [subreddit name] '''
-    embed = discord.Embed(title=f"A Post from r/{reddit}.", description=f'Random picture from r/{reddit}', color=0xff0000)
-    async with aiohttp.ClientSession() as cs:
-        async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
-            res = await r.json()
-            embed.set_image(url=res['data']['children'] [random.randint(0, 25)]['data']['url'])
-            await ctx.send(embed=embed, content=None)
+    x = range(number)
+    for i in x:
+        embed = discord.Embed(title=f"A Post from r/{reddit}.", description=f'Random picture from r/{reddit}', color=0xff0000)
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
+                res = await r.json()
+                embed.set_image(url=res['data']['children'] [random.randint(0, 30)]['data']['url'])
+                await ctx.send(embed=embed, content=None)
 
 @bot.command()
 async def urbdict(ctx, *, query: str):
+    term = query.replace(' ', '_')
     await ctx.send('Here is your search from the urban dictionary')
-    await ctx.send(f'https://www.urbandictionary.com/define.php?term={query}')
+    await ctx.send(f'https://www.urbandictionary.com/define.php?term={term}')
 
 @bot.command()
-async def defen(ctx, *, search: str):
-    await ctx.send('Here is your search from the merriam-webster dictionary')
-    await ctx.send(f'https://www.merriam-webster.com/dictionary/{search}')
+async def wiki(ctx, *, search: str):
+    term = search.replace(' ', '_')
+    await ctx.send('Here is your search from wikipedia')    
+    await ctx.send(f'https://en.wikipedia.org/wiki/{term}')
+
 
 @bot.command(pass_context=True)
-async def giphy(ctx, *, search):
-    embed = discord.Embed(colour=discord.Color.blue())
-    session = aiohttp.ClientSession()
+async def giphy(ctx, number: int, *, search: str):
 
-    if search == '':
-        response = await session.get('https://api.giphy.com/v1/gifs/random?api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5')
-        data = json.loads(await response.text())
-        embed.set_image(url=data['data']['images']['original']['url'])
-    else:
-        search.replace(' ', '+')
-        response = await session.get('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5&limit=10')
-        data = json.loads(await response.text())
-        gif_choice = random.randint(0, 15)
-        embed.set_image(url=data['data'][gif_choice]['images']['original']['url'])
+    x = range(number)
+    for gif in x:
 
-    await session.close()
+        embed = discord.Embed(colour=discord.Color.blue())
+        session = aiohttp.ClientSession()
 
-    await ctx.send(embed=embed)
+        if search == '':
+            response = await session.get('https://api.giphy.com/v1/gifs/random?api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5')
+            data = json.loads(await response.text())
+            embed.set_image(url=data['data']['images']['original']['url'])
+        else:
+            search.replace(' ', '+')
+            response = await session.get('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5&limit=10')
+            data = json.loads(await response.text())
+            gif_choice = random.randint(0, 10)
+            embed.set_image(url=data['data'][gif_choice]['images']['original']['url'])
+
+        await session.close()
+
+        await ctx.send(embed=embed)
 
 @bot.command()
 async def twitch(ctx, *, search: str):
+    term = search.replace(' ', '_')
     await ctx.send('Here is the stream you searched for:')
-    await ctx.send(f'https://twitch.tv/{search}')
+    await ctx.send(f'https://twitch.tv/{term}')
 
 
 @bot.command(aliases=['yt'])
