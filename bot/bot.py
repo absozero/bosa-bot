@@ -208,18 +208,24 @@ async def serverinfo(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
-async def reddit(ctx, reddit: str, number: int):
+async def reddit(ctx, subreddit: str, number: int):
     ''' Send pictures from a reddit subreddit 
-    usage:
-    -reddit [subreddit name] '''
-    x = range(number)
-    for i in x:
-        embed = discord.Embed(title=f"A Post from r/{reddit}.", description=f'Random picture from r/{reddit}', color=0xff0000)
-        async with aiohttp.ClientSession() as cs:
-            async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
-                res = await r.json()
-                embed.set_image(url=res['data']['children'] [random.randint(0, 30)]['data']['url'])
-                await ctx.send(embed=embed, content=None)
+    usage: limit is 35 to avoid spamming.
+    -reddit [subreddit name] [number of photos] '''
+    if 1 <= number <= 35:
+        x = range(number)
+        for i in x:
+            embed = discord.Embed(title=f"A Post from r/{reddit}.", description=f'Random picture from r/{reddit}', color=0xff0000)
+            async with aiohttp.ClientSession() as cs:
+                async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
+                    res = await r.json()
+                    embed.set_image(url=res['data']['children'] [random.randint(0, 15)]['data']['url'])
+                    await ctx.send(embed=embed, content=None)
+    elif number <= 0:
+        await ctx.send(f'You sent for {number} reddit posts. That wont work because {number} is less than or equal to zero.')
+    
+    else:
+        await ctx.send(f'You asked for {number} reddit posts. That\'s too much, way over the limit of 35! The reason the limit is at 35 is to avoid spamming, but 35 might be too much in itself')
 
 @bot.command()
 async def urbdict(ctx, *, query: str):
@@ -237,26 +243,34 @@ async def wiki(ctx, *, search: str):
 @bot.command(pass_context=True)
 async def giphy(ctx, number: int, *, search: str):
 
-    x = range(number)
-    for gif in x:
+    if 1 <= number <= 20:
+        x = range(number)
+        for gif in x:
 
-        embed = discord.Embed(colour=discord.Color.blue())
-        session = aiohttp.ClientSession()
+            embed = discord.Embed(colour=discord.Color.blue())
+            session = aiohttp.ClientSession()
 
-        if search == '':
-            response = await session.get('https://api.giphy.com/v1/gifs/random?api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5')
-            data = json.loads(await response.text())
-            embed.set_image(url=data['data']['images']['original']['url'])
-        else:
-            search.replace(' ', '+')
-            response = await session.get('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5&limit=10')
-            data = json.loads(await response.text())
-            gif_choice = random.randint(0, 10)
-            embed.set_image(url=data['data'][gif_choice]['images']['original']['url'])
+            if search == '':
+                response = await session.get('https://api.giphy.com/v1/gifs/random?api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5')
+                data = json.loads(await response.text())
+                embed.set_image(url=data['data']['images']['original']['url'])
+            else:
+                search.replace(' ', '+')
+                response = await session.get('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=Y4hnrG09EqYcNnv63Sj2gJvmy9ilDPx5&limit=10')
+                data = json.loads(await response.text())
+                gif_choice = random.randint(0, 10)
+                embed.set_image(url=data['data'][gif_choice]['images']['original']['url'])
 
-        await session.close()
+            await session.close()
 
-        await ctx.send(embed=embed)
+            await ctx.send(embed=embed)
+    
+    elif number <= 0:
+        await ctx.send(f'You sent for {number} gifs from giphy. That wont work because {number} is less than or equal to zero.')
+    
+    else:
+        await ctx.send(f'You asked for {number} gifs from giphy. That\'s too much, way over the limit of 15! The reason the limit is at 15 is to avoid spamming.')
+
 
 @bot.command()
 async def twitch(ctx, *, search: str):
