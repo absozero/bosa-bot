@@ -215,9 +215,9 @@ async def reddit(ctx, subreddit: str, number: int):
     if 1 <= number <= 35:
         x = range(number)
         for i in x:
-            embed = discord.Embed(title=f"A Post from r/{reddit}.", description=f'Random picture from r/{reddit}', color=0xff0000)
+            embed = discord.Embed(title=f"A Post from r/{subreddit}.", description=f'Random picture from r/{subreddit}', color=0xff0000)
             async with aiohttp.ClientSession() as cs:
-                async with cs.get(f'https://www.reddit.com/r/{reddit}/new.json?sort=hot') as r:
+                async with cs.get(f'https://www.reddit.com/r/{subreddit}/new.json?sort=hot') as r:
                     res = await r.json()
                     embed.set_image(url=res['data']['children'] [random.randint(0, 15)]['data']['url'])
                     await ctx.send(embed=embed, content=None)
@@ -269,7 +269,7 @@ async def giphy(ctx, number: int, *, search: str):
         await ctx.send(f'You sent for {number} gifs from giphy. That wont work because {number} is less than or equal to zero.')
     
     else:
-        await ctx.send(f'You asked for {number} gifs from giphy. That\'s too much, way over the limit of 15! The reason the limit is at 15 is to avoid spamming.')
+        await ctx.send(f'You asked for {number} gifs from giphy. That\'s too much, way over the limit of 20! The reason the limit is at 20 is to avoid spamming.')
 
 
 @bot.command()
