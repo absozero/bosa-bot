@@ -38,7 +38,15 @@ async def on_ready():
     await bot.change_presence(activity=Game(name="-help : Don't DM me I only work right in servers, not in DM's."))
     now = datetime.now()
     print('We have logged in as {0.user}'.format(bot))
-    print(f'Bot has been activated at {now.month}-{now.day}-{now.year} {now.hour}:{now.minute}:{now.second}.{now.microsecond}') 
+    print(f'Bot has been activated at {now.month}-{now.day}-{now.year} {now.hour}:{now.minute}:{now.second}.{now.microsecond}')
+    print('''
+██████╗░░█████╗░░██████╗░█████╗░  ██████╗░░█████╗░████████╗
+██╔══██╗██╔══██╗██╔════╝██╔══██╗  ██╔══██╗██╔══██╗╚══██╔══╝
+██████╦╝██║░░██║╚█████╗░███████║  ██████╦╝██║░░██║░░░██║░░░
+██╔══██╗██║░░██║░╚═══██╗██╔══██║  ██╔══██╗██║░░██║░░░██║░░░
+██████╦╝╚█████╔╝██████╔╝██║░░██║  ██████╦╝╚█████╔╝░░░██║░░░
+╚═════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝  ╚═════╝░░╚════╝░░░░╚═╝░░░''')
+     
 
 @bot.event
 async def on_message_delete(message):
@@ -55,6 +63,14 @@ async def delete(ctx, texts: int):
     await ctx.channel.purge(limit=texts + 1)
     await ctx.send(f'{texts} texts were deleted. ⛔'.format(texts), delete_after = 3)
 
+@bot.command()
+async def bosa(ctx):
+    '''Send a cool string of text with the name of BOSA-Bot'''
+    await ctx.send('''
+███████████████████████████████████████████
+█▄─▄─▀█─▄▄─█─▄▄▄▄██▀▄─████▄─▄─▀█─▄▄─█─▄─▄─█
+██─▄─▀█─██─█▄▄▄▄─██─▀─█████─▄─▀█─██─███─███
+▀▄▄▄▄▀▀▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▄▀▀''')
 @bot.command()
 async def snipe(ctx):
     '''Snipes the last message deleted while the bot is active and in a channel the bot can access
