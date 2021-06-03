@@ -19,7 +19,7 @@ A discord spam bot that will become a general discord bot.
 
 ## Websites
 
-- [Wiki/Documentation/Info](https://github.com/absozero/BOSA-bot/wiki)
+### [Wiki/Documentation/Info](https://github.com/absozero/BOSA-bot/wiki)
 
 - [Website of this repo](https://absozero.github.io/BOSA-bot/)
 
