@@ -24,15 +24,6 @@ with open("BOSA-bot/bot/info.json") as f:
 
 token = info["Token"]
 
-
-#TO DO IN SHORT TERM:
-#Add command categories
-#Add help menu descriptions for all of the commands
-#Add and find cool new commands to add
-#Add aliases to commands
-#Find other stuff to put on the to do list
-
-
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=Game(name="-help : Don't DM me I only work right in servers, not in DM's."))
@@ -71,6 +62,7 @@ async def bosa(ctx):
 █▄─▄─▀█─▄▄─█─▄▄▄▄██▀▄─████▄─▄─▀█─▄▄─█─▄─▄─█
 ██─▄─▀█─██─█▄▄▄▄─██─▀─█████─▄─▀█─██─███─███
 ▀▄▄▄▄▀▀▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▄▀▀''')
+
 @bot.command()
 async def snipe(ctx):
     '''Snipes the last message deleted while the bot is active and in a channel the bot can access
@@ -92,22 +84,35 @@ async def snipe(ctx):
 
 @bot.command()
 async def joke(ctx):
+    '''This command sends a jome from a random asosrtment of jokes
+    usage is:
+    -joke'''
     await ctx.send(random.choice(jokes) + ' 🤣')
 
 @bot.command()
 async def dice(ctx):
+    '''A command to simulate the roll of ONE DIE
+    usage is:
+    -dice'''
     await ctx.send(f'Your dice number is: {random.randint(1, 6)} 🎲')
 
 @bot.command()
 async def ball8(ctx):
-        await ctx.send(random.choice(Eightball_answers) + ' 🎱')
+    '''A command to simulate a fortune 8-ball
+    usage:
+    -ball8'''
+    await ctx.send(random.choice(Eightball_answers) + ' 🎱')
 
-@bot.command()
+@bot.command(aliases=['hello', 'wassup', 'whaddup', 'hey', 'yo', 'sup'])
 async def hi(ctx):
+    '''A command to simulate a return to a greeting
+    usage:
+    -[One of the command terms]'''
     await ctx.send(random.choice(hi_ans) + ' 👋')
 
 @bot.command()
 async def wholesome(ctx):
+    '''A command meant to be sent so that the user can receive a '''
     yo = discord.Embed(title='Wholesome', description='Just a wholesome gif.', color=0xF08080)
     yo.set_author(name='POG bot', url='https://absozero.github.io/POG-bot/', icon_url='https://cdn.discordapp.com/attachments/793648359231586327/833616210603016233/unknown.png')
     yo.set_image(url=random.choice(wholesomegif))
@@ -155,6 +160,9 @@ async def code(ctx):
 
 @bot.command(aliases=['time', 'date', 'second', 'ms', 'year', 'hour', 'date_time', 'week', 'day', 'timepls'])
 async def rn(ctx):
+    '''Gives the exact time as of when the command was entered.
+    usage:
+    -[]'''
     now = datetime.now()
 
     await ctx.send(f'This is the time in PST. Please transpose as required \n The year is: {now.year} \n The month is: {now.month} \n The day is: {now.day} \n The hour is: {now.hour} \n The minute is: {now.minute} \n The second is: {now.second} \n The microsecond is: {now.microsecond} \n ⏲️')
