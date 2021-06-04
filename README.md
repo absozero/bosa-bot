@@ -6,7 +6,7 @@
 **Version 2.0**
 
 ## Info
-A discord spam bot that will become a general discord bot.
+### A cool and simple to use discord bot built on [discord.py](https://github.com/Rapptz/discord.py).
 
 - It is being actively developed.
 - May be slightly unstable
@@ -21,6 +21,6 @@ A discord spam bot that will become a general discord bot.
 
 ### [Wiki/Documentation/Info](https://github.com/absozero/BOSA-bot/wiki)
 
-- [Website of this repo](https://absozero.github.io/BOSA-bot/)
+- [Website](https://absozero.github.io/BOSA-bot/)
 
 - [Bot invite link](https://discord.com/api/oauth2/authorize?client_id=844755365191352358&permissions=8&scope=bot)
