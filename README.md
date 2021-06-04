@@ -9,11 +9,12 @@
 ### A cool and simple to use discord bot built on [discord.py](https://github.com/Rapptz/discord.py).
 
 - It is being actively developed.
-- May be slightly unstable
+- Being actively developed by 1 person, so development may be slow.
+- Refer to the wiki on the instructions to contribute to the project.
 
 ## Caution
 
-- Have fun while using the bot! (Being actively developed by 1 person, so development may be slow.)
+- Have fun while using the bot! 
 
 - If there is a fatal error/bug in the code or the procedure I have written is incorrect, please open an issue in the repository issues tab []()
 
