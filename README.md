@@ -20,7 +20,7 @@
 
 ## Websites
 
-### [Wiki/Documentation/Info](https://github.com/absozero/BOSA-bot/wiki)
+- [Wiki/Documentation/Info](https://github.com/absozero/BOSA-bot/wiki)
 
 - [Website](https://absozero.github.io/BOSA-bot/)
 
