@@ -12,8 +12,7 @@ from urllib import parse, request
 
 from discord.ext import tasks,commands
 from discord import Game, emoji
-from index import wassup_ans, hi_ans, Eightball_answers
-from index import jokes, roastgif, bruhgif, wholesomegif
+from index import hi_ans, Eightball_answers, jokes
 from datetime import datetime
 
 bot = commands.Bot(command_prefix = '-')

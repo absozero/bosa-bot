@@ -11,7 +11,7 @@ jokes = ['What did the traffic light say to the car? Don’t look! I’m about t
  'BACTERIA 1: [runs toward pizza that has just been dropped on the floor] BACTERIA 2: [football tackles him to the ground] YOU HAVE TO WAIT FIVE SECONDS SEBASTIAN',
  '1st date: I love the spiderman movies Me: So do I [thinking of something to say to impress her] Me: I used to be a spider',
  'Go to a fancy restaurant. Order the lobster. Order it alive. When it comes, order food for your new pet lobster. Then take lobster home.',
- 'Pennies smell nice. The zinc in them give a special smell, a tinge, of sorts
+ 'Pennies smell nice. The zinc in them give a special smell, a tinge, of sorts'
 ]
 
 #responses for hi command
