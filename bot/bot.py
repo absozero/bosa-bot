@@ -15,6 +15,20 @@ from discord import Game, emoji
 from index import hi_ans, Eightball_answers, jokes
 from datetime import datetime
 
+
+#The following to-do list will be either the same or a bit more updated than the list in the wiki of the repo.
+
+#-----------Start list-----------------------------
+# Add command categories
+# Add economy commands
+# Add help menu descriptions for all of the commands
+# Add aliases to commands
+# Add and find cool new commands to add
+# Find other stuff to put on the to do list
+#-----------End List-------------------------------
+
+
+
 bot = commands.Bot(command_prefix = '-')
 bot.sniped_messages = {}
 
@@ -264,6 +278,11 @@ async def giphy(ctx, number: int, *, search: str):
 
 @bot.command()
 async def twitch(ctx, *, search: str):
+    '''Allow the bot to send a twitch stream to the user, as long as the stream is 
+    mentioning the right account and the stream is active.
+    Otherwise, there will not be a stream for that request.
+    usage:
+    -twitch [streamer username]'''
     term = search.replace(' ', '_')
     await ctx.send('Here is the stream you searched for:')
     await ctx.send(f'https://twitch.tv/{term}')
@@ -284,7 +303,6 @@ async def youtube(ctx, num: int, *, search: str):
     await ctx.send(f'This is the {num}th video found when searching for the term \'{search}\'. 🖥️')
     await ctx.send('https://www.youtube.com/watch?v=' + vid_id[num])
 
-#Add economy system soon
 
 
 #Token ----> goes right under 
