@@ -58,14 +58,17 @@ async def on_message_delete(message):
 
 #delete user-inputted number of texts before the command is given
 @bot.command()
-async def delete(ctx, texts: int):
+async def delete(ctx, *, texts: int):
 
     '''A command to delete a number of texts specified by user
     The usage would be: 
     -delete [any whole number]'''
+    if 1 <= texts <= 500:
+        await ctx.channel.purge(limit=texts + 1)
+        await ctx.send(f'{texts} texts were deleted. ⛔'.format(texts), delete_after = 3)
 
-    await ctx.channel.purge(limit=texts + 1)
-    await ctx.send(f'{texts} texts were deleted. ⛔'.format(texts), delete_after = 3)
+    else:
+        await ctx.send(f'You sent for {texts} messages to be deleted. That is over the limit of 500 texts deleted. The limit is set there because more than that would take a long time to process and would be laggy.')
 
 @bot.command()
 async def bosa(ctx):
