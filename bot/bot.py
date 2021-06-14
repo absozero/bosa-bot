@@ -68,7 +68,7 @@ async def delete(ctx, *, texts: int):
 
 @bot.command()
 async def bosa(ctx):
-    '''Send a cool string of text with the name of BOSA-Bot'''
+    '''Send a cool string of text with the name of BOSA-Bot''' 
     await ctx.send('''
 â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ
 â–ˆâ–„â”€â–„â”€â–€â–ˆâ”€â–„â–„â”€â–ˆâ”€â–„â–„â–„â–„â–ˆâ–ˆâ–€â–„â”€â–ˆâ–ˆâ–ˆâ–ˆâ–„â”€â–„â”€â–€â–ˆâ”€â–„â–„â”€â–ˆâ”€â–„â”€â–„â”€â–ˆ
@@ -232,6 +232,7 @@ async def reddit(ctx, subreddit: str, number: int):
 
 @bot.command()
 async def urbdict(ctx, *, query: str):
+    '''Gets a
     term = query.replace(' ', '_')
     await ctx.send('Here is your search from the urban dictionary')
     await ctx.send(f'https://www.urbandictionary.com/define.php?term={term}')
@@ -247,7 +248,7 @@ async def wiki(ctx, *, search: str):
 async def giphy(ctx, number: int, *, search: str):
 
     if 1 <= number <= 20:
-        x = range(number)
+        x = range(number) 
         for gif in x:
 
             embed = discord.Embed(colour=discord.Color.blue())
