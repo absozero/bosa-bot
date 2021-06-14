@@ -133,10 +133,13 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
+.project
+.pydevproject
+.settings/
 
 # Cython debug symbols
 cython_debug/
 
 #Holds sensitive info that the bot needs to run: Token and channel ID's
-info.json
+info.py
 
