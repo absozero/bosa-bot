@@ -232,7 +232,7 @@ async def reddit(ctx, subreddit: str, number: int):
 
 @bot.command()
 async def urbdict(ctx, *, query: str):
-    '''Gets a
+    '''Gets a query from the popular urban dictionary'''
     term = query.replace(' ', '_')
     await ctx.send('Here is your search from the urban dictionary')
     await ctx.send(f'https://www.urbandictionary.com/define.php?term={term}')
