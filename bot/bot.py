@@ -56,7 +56,7 @@ async def on_message_delete(message):
 @bot.command()
 async def delete(ctx, *, texts: int):
 
-    '''A command to delete a number of texts specified by user
+    '''A command to delete a number of texts specified by user. The limit is 500 deleted.
     The usage would be: 
     -delete [any whole number]'''
     if 1 <= texts <= 500:
