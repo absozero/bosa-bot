@@ -14,6 +14,7 @@ from discord.ext import tasks,commands
 from discord import Game, emoji
 from index import hi_ans, Eightball_answers, jokes
 from datetime import datetime
+from info import token
 
 
 #The following to-do list will be either the same or a bit more updated than the list in the wiki of the repo.
@@ -32,11 +33,6 @@ from datetime import datetime
 bot = commands.Bot(command_prefix = '-')
 bot.sniped_messages = {}
 
-with open("BOSA-bot/bot/info.json") as f:
-    info = json.load(f)
-
-token = info["Token"]
-
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=Game(name="-help : Don't DM me I only work right in servers, not in DM's."))
@@ -44,12 +40,12 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
     print(f'Bot has been activated at {now.month}-{now.day}-{now.year} {now.hour}:{now.minute}:{now.second}.{now.microsecond}')
     print('''
-██████╗░░█████╗░░██████╗░█████╗░  ██████╗░░█████╗░████████╗
-██╔══██╗██╔══██╗██╔════╝██╔══██╗  ██╔══██╗██╔══██╗╚══██╔══╝
-██████╦╝██║░░██║╚█████╗░███████║  ██████╦╝██║░░██║░░░██║░░░
-██╔══██╗██║░░██║░╚═══██╗██╔══██║  ██╔══██╗██║░░██║░░░██║░░░
-██████╦╝╚█████╔╝██████╔╝██║░░██║  ██████╦╝╚█████╔╝░░░██║░░░
-╚═════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝  ╚═════╝░░╚════╝░░░░╚═╝░░░''')
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â–‘â–‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â–‘â–‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â–‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â–‘â€ƒâ€ƒâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â–‘â–‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â–‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—
+â–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•—â–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•—â–ˆâ–ˆâ•”â•�â•�â•�â•�â•�â–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•—â€ƒâ€ƒâ–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•—â–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•—â•šâ•�â•�â–ˆâ–ˆâ•”â•�â•�â•�
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•¦â•�â–ˆâ–ˆâ•‘â–‘â–‘â–ˆâ–ˆâ•‘â•šâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•—â–‘â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•‘â€ƒâ€ƒâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•¦â•�â–ˆâ–ˆâ•‘â–‘â–‘â–ˆâ–ˆâ•‘â–‘â–‘â–‘â–ˆâ–ˆâ•‘â–‘â–‘â–‘
+â–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•—â–ˆâ–ˆâ•‘â–‘â–‘â–ˆâ–ˆâ•‘â–‘â•šâ•�â•�â•�â–ˆâ–ˆâ•—â–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•‘â€ƒâ€ƒâ–ˆâ–ˆâ•”â•�â•�â–ˆâ–ˆâ•—â–ˆâ–ˆâ•‘â–‘â–‘â–ˆâ–ˆâ•‘â–‘â–‘â–‘â–ˆâ–ˆâ•‘â–‘â–‘â–‘
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•¦â•�â•šâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•”â•�â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•”â•�â–ˆâ–ˆâ•‘â–‘â–‘â–ˆâ–ˆâ•‘â€ƒâ€ƒâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•¦â•�â•šâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ•”â•�â–‘â–‘â–‘â–ˆâ–ˆâ•‘â–‘â–‘â–‘
+â•šâ•�â•�â•�â•�â•�â•�â–‘â–‘â•šâ•�â•�â•�â•�â•�â–‘â•šâ•�â•�â•�â•�â•�â•�â–‘â•šâ•�â•�â–‘â–‘â•šâ•�â•�â€ƒâ€ƒâ•šâ•�â•�â•�â•�â•�â•�â–‘â–‘â•šâ•�â•�â•�â•�â•�â–‘â–‘â–‘â–‘â•šâ•�â•�â–‘â–‘â–‘''')
      
 
 @bot.event
@@ -60,24 +56,24 @@ async def on_message_delete(message):
 @bot.command()
 async def delete(ctx, *, texts: int):
 
-    '''A command to delete a number of texts specified by user
+    '''A command to delete a number of texts specified by user. The limit is 500 deleted.
     The usage would be: 
     -delete [any whole number]'''
     if 1 <= texts <= 500:
         await ctx.channel.purge(limit=texts + 1)
-        await ctx.send(f'{texts} texts were deleted. ⛔'.format(texts), delete_after = 3)
+        await ctx.send(f'{texts} texts were deleted. â›”'.format(texts), delete_after = 3)
 
     else:
         await ctx.send(f'You sent for {texts} messages to be deleted. That is over the limit of 500 texts deleted. The limit is set there because more than that would take a long time to process and would be laggy.')
 
 @bot.command()
 async def bosa(ctx):
-    '''Send a cool string of text with the name of BOSA-Bot'''
+    '''Send a cool string of text with the name of BOSA-Bot''' 
     await ctx.send('''
-███████████████████████████████████████████
-█▄─▄─▀█─▄▄─█─▄▄▄▄██▀▄─████▄─▄─▀█─▄▄─█─▄─▄─█
-██─▄─▀█─██─█▄▄▄▄─██─▀─█████─▄─▀█─██─███─███
-▀▄▄▄▄▀▀▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▄▀▀''')
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ
+â–ˆâ–„â”€â–„â”€â–€â–ˆâ”€â–„â–„â”€â–ˆâ”€â–„â–„â–„â–„â–ˆâ–ˆâ–€â–„â”€â–ˆâ–ˆâ–ˆâ–ˆâ–„â”€â–„â”€â–€â–ˆâ”€â–„â–„â”€â–ˆâ”€â–„â”€â–„â”€â–ˆ
+â–ˆâ–ˆâ”€â–„â”€â–€â–ˆâ”€â–ˆâ–ˆâ”€â–ˆâ–„â–„â–„â–„â”€â–ˆâ–ˆâ”€â–€â”€â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”€â–„â”€â–€â–ˆâ”€â–ˆâ–ˆâ”€â–ˆâ–ˆâ–ˆâ”€â–ˆâ–ˆâ–ˆ
+â–€â–„â–„â–„â–„â–€â–€â–„â–„â–„â–„â–€â–„â–„â–„â–„â–„â–€â–„â–„â–€â–„â–„â–€â–€â–€â–„â–„â–„â–„â–€â–€â–„â–„â–„â–„â–€â–€â–„â–„â–„â–€â–€''')
 
 @bot.command()
 async def snipe(ctx):
@@ -103,28 +99,28 @@ async def joke(ctx):
     '''This command sends a jome from a random asosrtment of jokes
     usage is:
     -joke'''
-    await ctx.send(random.choice(jokes) + ' 🤣')
+    await ctx.send(random.choice(jokes) + ' ðŸ¤£')
 
 @bot.command()
 async def dice(ctx):
     '''A command to simulate the roll of ONE DIE
     usage is:
     -dice'''
-    await ctx.send(f'Your dice number is: {random.randint(1, 6)} 🎲')
+    await ctx.send(f'Your dice number is: {random.randint(1, 6)} ðŸŽ²')
 
 @bot.command()
 async def ball8(ctx):
     '''A command to simulate a fortune 8-ball
     usage:
     -ball8'''
-    await ctx.send(random.choice(Eightball_answers) + ' 🎱')
+    await ctx.send(random.choice(Eightball_answers) + ' ðŸŽ±')
 
 @bot.command(aliases=['hello', 'wassup', 'whaddup', 'hey', 'yo', 'sup'])
 async def hi(ctx):
     '''A command to simulate a return to a greeting
     usage:
     -[One of the command terms]'''
-    await ctx.send(random.choice(hi_ans) + ' 👋')
+    await ctx.send(random.choice(hi_ans) + ' ðŸ‘‹')
 
 
 @bot.command() 
@@ -132,7 +128,7 @@ async def ping(ctx):
     '''Sends the ping of the bot to the user
     usage:
     -ping'''
-    await ctx.send(f'{round(bot.latency * 1000)} ms. ⌚')
+    await ctx.send(f'{round(bot.latency * 1000)} ms. âŒš')
 
 @bot.command() 
 async def code(ctx):
@@ -148,7 +144,7 @@ async def rn(ctx):
     -[]'''
     now = datetime.now()
 
-    await ctx.send(f'This is the time in PST. Please transpose as required \n The year is: {now.year} \n The month is: {now.month} \n The day is: {now.day} \n The hour is: {now.hour} \n The minute is: {now.minute} \n The second is: {now.second} \n The microsecond is: {now.microsecond} \n ⏲️')
+    await ctx.send(f'This is the time in PST. Please transpose as required \n The year is: {now.year} \n The month is: {now.month} \n The day is: {now.day} \n The hour is: {now.hour} \n The minute is: {now.minute} \n The second is: {now.second} \n The microsecond is: {now.microsecond} \n â�²ï¸�')
     await ctx.send(f"Also known as '{now.month}-{now.day}-{now.year} {now.hour}:{now.minute}:{now.second}.{now.microsecond}'")
 
 @bot.command(aliases=['user', 'member'])
@@ -236,6 +232,7 @@ async def reddit(ctx, subreddit: str, number: int):
 
 @bot.command()
 async def urbdict(ctx, *, query: str):
+    '''Gets a query from the popular urban dictionary'''
     term = query.replace(' ', '_')
     await ctx.send('Here is your search from the urban dictionary')
     await ctx.send(f'https://www.urbandictionary.com/define.php?term={term}')
@@ -249,9 +246,10 @@ async def wiki(ctx, *, search: str):
 
 @bot.command(pass_context=True)
 async def giphy(ctx, number: int, *, search: str):
+    '''Get a gif into the chat from the giphy gif source'''
 
     if 1 <= number <= 20:
-        x = range(number)
+        x = range(number) 
         for gif in x:
 
             embed = discord.Embed(colour=discord.Color.blue())
@@ -303,7 +301,7 @@ async def youtube(ctx, num: int, *, search: str):
     html = urllib.request.urlopen(f"https://www.youtube.com/results?search_query={searchy}")
     vid_id = re.findall(r"watch\?v=(\S{11})", html.read().decode())
 
-    await ctx.send(f'This is the {num}th video found when searching for the term \'{search}\'. 🖥️')
+    await ctx.send(f'This is the {num}th video found when searching for the term \'{search}\'. ðŸ–¥ï¸�')
     await ctx.send('https://www.youtube.com/watch?v=' + vid_id[num])
 
 
