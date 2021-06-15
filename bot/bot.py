@@ -246,6 +246,7 @@ async def wiki(ctx, *, search: str):
 
 @bot.command(pass_context=True)
 async def giphy(ctx, number: int, *, search: str):
+    '''Get a gif into the chat from the giphy gif source'''
 
     if 1 <= number <= 20:
         x = range(number) 
