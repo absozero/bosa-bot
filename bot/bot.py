@@ -85,7 +85,7 @@ async def snipe(ctx):
     await ctx.channel.send(embed=embed)
 
 
-@bot.command()
+@bot.command(aliases=['humor', 'funny', 'haha', 'laugh'])
 async def joke(ctx):
     '''This command sends a jome from a random asosrtment of jokes
     usage is:
