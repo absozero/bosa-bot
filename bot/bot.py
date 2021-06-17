@@ -29,7 +29,6 @@ from info import token
 #-----------End List-------------------------------
 
 
-
 bot = commands.Bot(command_prefix = '-')
 bot.sniped_messages = {}
 
