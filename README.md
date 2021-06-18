@@ -5,6 +5,12 @@
 
 **Version 2.0**
 
+<p align="center">
+  <a href="//discord.gg/tmFf5zt827"><img src="https://img.shields.io/discord/739934735387721768?logo=discord"></a>
+  <a href="https://github.com/absozero/BOSA-bot/releases/"><img src="https://img.shields.io/github/downloads/absozero/BOSA-bot/total">
+  <a href="https://github.com/absozero/BOSA-bot/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/absozero/BOSA-bot"></a>
+</p>
+
 ## Info
 ### A cool and simple to use discord bot built on [discord.py](https://github.com/Rapptz/discord.py).
 
