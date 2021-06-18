@@ -295,7 +295,7 @@ async def youtube(ctx, num: int, *, search: str):
     html = urllib.request.urlopen(f"https://www.youtube.com/results?search_query={searchy}")
     vid_id = re.findall(r"watch\?v=(\S{11})", html.read().decode())
 
-    await ctx.send(f'This is the {num}th video found when searching for the term \'{search}\'. ðŸ–¥ï¸�')
+    await ctx.send(f'This is the {num}th video found when searching for the term \'{search}\'.')
     await ctx.send('https://www.youtube.com/watch?v=' + vid_id[num])
 
 
