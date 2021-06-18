@@ -7,6 +7,7 @@
 
 <p align="center">
   <a href="//discord.gg/tmFf5zt827"><img src="https://img.shields.io/discord/849953866308517888"></a>
+  <iframe src="https://discord.com/widget?id=849953866308517888&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
   <a href="https://github.com/absozero/BOSA-bot/releases/"><img src="https://img.shields.io/github/downloads/absozero/BOSA-bot/total">
   <a href="https://github.com/absozero/BOSA-bot/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/absozero/BOSA-bot"></a>
 </p>
