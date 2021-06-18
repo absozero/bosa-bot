@@ -7,11 +7,7 @@
 
 <p align="center">
   <a href="//discord.gg/tmFf5zt827"><img src="https://img.shields.io/discord/739934735387721768?logo=discord"></a>
-  <a href="//github.com/kkrypt0nn/Python-Discord-Bot-Template/releases"><img src="https://img.shields.io/github/v/release/kkrypt0nn/Python-Discord-Bot-Template"></a>
-  <a href="//github.com/kkrypt0nn/Python-Discord-Bot-Template/commits/main"><img src="https://img.shields.io/github/last-commit/kkrypt0nn/Python-Discord-Bot-Template"></a>
-  <a href="//github.com/kkrypt0nn/Python-Discord-Bot-Template/releases"><img src="https://img.shields.io/github/downloads/kkrypt0nn/Python-Discord-Bot-Template/total"></a>
-  <a href="//github.com/kkrypt0nn/Python-Discord-Bot-Template/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/kkrypt0nn/Python-Discord-Bot-Template"></a>
-  <a href="//github.com/kkrypt0nn/Python-Discord-Bot-Template"><img src="https://img.shields.io/github/languages/code-size/kkrypt0nn/Python-Discord-Bot-Template"></a>
+  <a href="https://github.com/absozero/BOSA-bot/releases/"><img src="https://img.shields.io/github/downloads/absozero/BOSA-bot/total">
   <a href="https://github.com/absozero/BOSA-bot/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/absozero/BOSA-bot"></a>
 </p>
 
