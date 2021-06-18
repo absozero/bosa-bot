@@ -6,7 +6,10 @@
 **Version 2.0**
 
 
-[![](https://img.shields.io/discord/849953866308517888)](//discord.gg/tmFf5zt827) [![](https://img.shields.io/github/downloads/absozero/BOSA-bot/total) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Absozero/BOSA-bot?include_prereleases)](https://github.com/absozero/BOSA-bot/releases/) [![GitHub issues](https://img.shields.io/github/issues/absozero/BOSA-bot)](https://github.com/absozero/BOSA-bot/issues)
+[![](https://img.shields.io/discord/849953866308517888)](//discord.gg/tmFf5zt827) 
+[![](https://img.shields.io/github/downloads/absozero/BOSA-bot/total)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Absozero/BOSA-bot?include_prereleases)](https://github.com/absozero/BOSA-bot/releases/) 
+[![GitHub issues](https://img.shields.io/github/issues/absozero/BOSA-bot)](https://github.com/absozero/BOSA-bot/issues)
 
 ## Info
 ### A cool and simple to use discord bot built on [discord.py](https://github.com/Rapptz/discord.py).
