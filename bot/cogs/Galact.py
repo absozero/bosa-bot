@@ -105,7 +105,6 @@ RESPONSES = {
 class Galact(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        bot.run()
 
 
     def match(self, text):
@@ -123,8 +122,12 @@ class Galact(commands.Cog):
             repluj = (bot.match(texts))
 
     @commands.command()
-    async def galact(self, bot, repluj, ctx, *, inpt):
+    async def galact(self, ctx, *, inpt):
         await ctx.send(repluj)
+
+    @commands.command()
+    async def plng(self, repluj, ctx, *, inpt):
+        await ctx.send('pong')        
     
         
 
