@@ -114,7 +114,7 @@ class Galact(commands.Cog):
                     return re.sub(p, random.choice(responses), text)
             return 'text not in library'
   
-    def run(self, bot):
+    def run(self, bot, repluj, inpt):
         while True:
 
             texts = inpt
@@ -123,7 +123,7 @@ class Galact(commands.Cog):
             repluj = (bot.match(texts))
 
     @commands.command()
-    async def galact(self, ctx, *, inpt):
+    async def galact(self, bot, repluj, ctx, *, inpt):
         await ctx.send(repluj)
     
         
