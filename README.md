@@ -31,5 +31,3 @@
 - [Website](https://absozero.github.io/BOSA-bot/)
 
 - [Bot invite link](https://discord.com/api/oauth2/authorize?client_id=844755365191352358&permissions=8&scope=bot)
-
-- test
