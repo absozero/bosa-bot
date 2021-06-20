@@ -34,7 +34,7 @@ else:
     with open("info.json") as file:
         info = json.load(file)
 
-bot = commands.Bot(command_prefix = info["prefix"])
+bot = commands.Bot(command_prefix = '-')
 bot.sniped_messages = {}
 
 @bot.event
