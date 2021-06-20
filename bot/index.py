@@ -19,7 +19,8 @@ hi_ans = ['Hi!',
  'Hello',
  'Hey, how are ya?',
  'What\'s up?',
- 'Howdy!'
+ 'Howdy!',
+ 'Yo!'
 ]
 
 #responses for 8-ball command
