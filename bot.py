@@ -12,7 +12,6 @@ from urllib import parse, request
 
 from discord.ext import tasks,commands
 from discord import Game, emoji
-from index import Eightball_answers, jokes
 from datetime import datetime
 
 
@@ -92,27 +91,12 @@ async def snipe(ctx):
 
     await ctx.channel.send(embed=embed)
 
-
-@bot.command(aliases=['humor', 'funny', 'haha', 'laugh', 'lol'])
-async def joke(ctx):
-    '''This command sends a jome from a random asosrtment of jokes
-    usage is:
-    -joke'''
-    await ctx.send(random.choice(jokes) + ' ðŸ¤£')
-
 @bot.command()
 async def dice(ctx):
     '''A command to simulate the roll of ONE DIE
     usage is:
     -dice'''
     await ctx.send(f'Your dice number is: {random.randint(1, 6)} ðŸŽ²')
-
-@bot.command()
-async def ball8(ctx):
-    '''A command to simulate a fortune 8-ball
-    usage:
-    -ball8'''
-    await ctx.send(random.choice(Eightball_answers) + ' ðŸŽ±')
 
 
 @bot.command() 
