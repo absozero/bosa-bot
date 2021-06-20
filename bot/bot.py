@@ -19,7 +19,7 @@ from datetime import datetime
 #The following to-do list will be either the same or a bit more updated than the list in the wiki of the repo.
 
 #-----------Start list-----------------------------
-# Add command categories
+# Move everything to seperate cogs
 # Add economy commands
 # Add help menu descriptions for all of the commands
 # Add aliases to commands
