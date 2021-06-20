@@ -6,8 +6,8 @@ class Greetings(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def bleh(self, ctx):
-        await ctx.send('Yuck!')
+    async def hello(self, ctx):
+        await ctx.send('hi!')
 
 def setup(bot):
     bot.add_cog(Greetings(bot))
