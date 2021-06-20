@@ -8,4 +8,4 @@ import os
 if os.path.isfile("bot.py"):
         os.system("python bot.py")
 else:
-    print('This file is in the wrong place, or bot.py file is not available. Make sure it is with the other files from the repo.')
+    print('This file is in the wrong place, or bot.py file is not available. Make sure it is with the other files from the repo.')asdfsadf
