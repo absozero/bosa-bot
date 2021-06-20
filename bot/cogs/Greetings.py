@@ -1,4 +1,5 @@
 import discord
+import random
 from discord.ext import commands
 
 hi_ans = ['Hi!',
