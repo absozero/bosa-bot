@@ -14,7 +14,6 @@ from discord.ext import tasks,commands
 from discord import Game, emoji
 from index import hi_ans, Eightball_answers, jokes
 from datetime import datetime
-from info import token
 
 
 #The following to-do list will be either the same or a bit more updated than the list in the wiki of the repo.
@@ -29,7 +28,13 @@ from info import token
 #-----------End List-------------------------------
 
 
-bot = commands.Bot(command_prefix = '-')
+if not os.path.isfile("info.json"):
+    print("A info.json was not made. Make it and fill it with the correct parameters, please.")
+else:
+    with open("info.json") as file:
+        info = json.load(file)
+
+bot = commands.Bot(command_prefix = info["prefix"])
 bot.sniped_messages = {}
 
 @bot.event
@@ -301,5 +306,5 @@ async def youtube(ctx, num: int, *, search: str):
 
 
 #Token ----> goes right under 
-bot.run(token)
+bot.run(info["token"])
     
