@@ -13,10 +13,6 @@ class Greetings(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def hello(self, ctx):
-        await ctx.send('hi!')
-
     @commands.command(aliases=['hello', 'wassup', 'whaddup', 'hey', 'yo', 'sup'])
     async def hi(self, ctx):
         '''A command to simulate a return to a greeting

@@ -12,7 +12,7 @@ from urllib import parse, request
 
 from discord.ext import tasks,commands
 from discord import Game, emoji
-from index import hi_ans, Eightball_answers, jokes
+from index import Eightball_answers, jokes
 from datetime import datetime
 
 
@@ -113,13 +113,6 @@ async def ball8(ctx):
     usage:
     -ball8'''
     await ctx.send(random.choice(Eightball_answers) + ' ðŸŽ±')
-
-@bot.command(aliases=['hello', 'wassup', 'whaddup', 'hey', 'yo', 'sup'])
-async def hi(ctx):
-    '''A command to simulate a return to a greeting
-    usage:
-    -[One of the command terms]'''
-    await ctx.send(random.choice(hi_ans) + ' ðŸ‘‹')
 
 
 @bot.command() 
