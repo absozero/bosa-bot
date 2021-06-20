@@ -123,11 +123,7 @@ class Galact(commands.Cog):
 
     @commands.command()
     async def galact(self, ctx, *, inpt):
-        await ctx.send(repluj)
-
-    @commands.command()
-    async def plng(self, repluj, ctx, *, inpt):
-        await ctx.send('pong')        
+        await ctx.send(repluj)        
     
         
 
