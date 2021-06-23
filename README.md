@@ -7,7 +7,7 @@
 
 [![Discord](https://img.shields.io/discord/849953866308517888?style=for-the-badge)](https://discord.gg/tmFf5zt827)
 ![GitHub all releases](https://img.shields.io/github/downloads/Absozero/BOSA-bot/total?style=for-the-badge)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Absozero/BOSA-bot?include_prereleases)](https://github.com/absozero/BOSA-bot/releases/) 
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Absozero/BOSA-bot?include_prereleases&style=for-the-badge)](https://github.com/absozero/BOSA-bot/releases/) 
 [![GitHub issues](https://img.shields.io/github/issues/absozero/BOSA-bot)](https://github.com/absozero/BOSA-bot/issues)
 
 ## Info
