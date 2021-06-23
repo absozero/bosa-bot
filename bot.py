@@ -50,9 +50,12 @@ async def on_ready():
 ██████╦╝╚█████╔╝██████╔╝██║░░██║  ██████╦╝╚█████╔╝░░░██║░░░
 ╚═════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝  ╚═════╝░░╚════╝░░░░╚═╝░░░''')
 
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.py'):
-        bot.load_extension(f'cogs.{filename[:-3]}')
+if os.path.exists("cogs"):
+    for filename in os.listdir('./cogs'):
+        if filename.endswith('.py'):
+            bot.load_extension(f'cogs.{filename[:-3]}')
+else:
+    print('There is no "cogs" folder found, make sure you have it! The bot will run without the cogs')
 
 @bot.event
 async def on_message_delete(message):
