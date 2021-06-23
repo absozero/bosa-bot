@@ -2,6 +2,8 @@
 
 ![Logo](https://cdn.discordapp.com/avatars/844755365191352358/9d8fd75f36f5bd4e2866e6fcd8acac26.png?size=128)
 
+## Contribute!
+[![Contribute to the project](https://img.shields.io/badge/Contribute-Instructions-informational)](https://github.com/absozero/BOSA-bot/wiki/How-to-Help)
 
 **Version 2.0**
 
