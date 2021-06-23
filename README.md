@@ -33,3 +33,6 @@
 - [Bot invite link](https://discord.com/api/oauth2/authorize?client_id=844755365191352358&permissions=8&scope=bot)
 
 ## Stuff about the repo
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Absozero/BOSA-bot?style=for-the-badge)
+
