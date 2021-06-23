@@ -12,6 +12,7 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/Absozero/BOSA-bot?style=social)
 ![Lines of code](https://img.shields.io/tokei/lines/github/Absozero/BOSA-bot?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Absozero/BOSA-bot?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Absozero/BOSA-bot)
 ## Info
 ### A cool and simple to use discord bot built on [discord.py](https://github.com/Rapptz/discord.py).
 
