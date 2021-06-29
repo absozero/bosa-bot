@@ -2,6 +2,8 @@
 
 ![Logo](https://cdn.discordapp.com/avatars/844755365191352358/9d8fd75f36f5bd4e2866e6fcd8acac26.png?size=128)
 
+# Me and my discord server
+<img alt="About me" src="https://img.shields.io/badge/absozero-%233790-5865F2?logo=discord&link=http://discord.gg/ScDfwnrUZX&logoWidth=20&link=http://www.youtube.com/watch?v=dQw4w9WgXcQ&label=ΛBƧӨZΣЯӨ&labelColor=009900&logoColor=FF0022&style=for-the-badge">
 ## Contribute!
 [![Contribute to the project](https://img.shields.io/badge/Contribute-Instructions-informational)](https://github.com/absozero/BOSA-bot/wiki/How-to-Help)
 
