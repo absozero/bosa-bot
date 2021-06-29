@@ -38,10 +38,10 @@
 
 ## Stuff about the repo
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Absozero/BOSA-bot?color=F797EB&style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/Absozero/BOSA-bot?style=for-the-badge)
-![GitHub Release Date](https://img.shields.io/github/release-date/Absozero/BOSA-bot?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Absozero/BOSA-bot?color=F797EB&logo=github&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/Absozero/BOSA-bot?style=for-the-badge&logo=github)
+![GitHub Release Date](https://img.shields.io/github/release-date/Absozero/BOSA-bot?style=for-the-badge&logo=github&logo=github)
 ![Security Headers (Don't follow redirects)](https://img.shields.io/security-headers?ignoreRedirects&style=for-the-badge&url=https%3A%2F%2Fabsozero.github.io%2FBOSA-bot%2F)
-![GitHub](https://img.shields.io/github/license/Absozero/BOSA-bot?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Absozero/BOSA-bot?style=for-the-badge&logo=github)
 ![GitHub top language](https://img.shields.io/github/languages/top/Absozero/BOSA-bot?logo=python&logoColor=yellow&style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues-raw/Absozero/BOSA-bot?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues-raw/Absozero/BOSA-bot?style=for-the-badge&logo=github)
