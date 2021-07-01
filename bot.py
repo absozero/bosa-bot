@@ -191,26 +191,6 @@ async def serverinfo(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
-async def reddit(ctx, subreddit: str, number: int):
-    ''' Send pictures from a reddit subreddit 
-    usage: limit is 35 to avoid spamming.
-    -reddit [subreddit name] [number of photos] '''
-    if 1 <= number <= 35:
-        x = range(number)
-        for i in x:
-            embed = discord.Embed(title=f"A Post from r/{subreddit}.", description=f'Random picture from r/{subreddit}', color=0xff0000)
-            async with aiohttp.ClientSession() as cs:
-                async with cs.get(f'https://www.reddit.com/r/{subreddit}/new.json?sort=hot') as r:
-                    res = await r.json()
-                    embed.set_image(url=res['data']['children'] [random.randint(0, 15)]['data']['url'])
-                    await ctx.send(embed=embed, content=None)
-    elif number <= 0:
-        await ctx.send(f'You sent for {number} reddit posts. That wont work because {number} is less than or equal to zero.')
-    
-    else:
-        await ctx.send(f'You asked for {number} reddit posts. That\'s too much, way over the limit of 35! The reason the limit is at 35 is to avoid spamming, but 35 might be too much in itself')
-
-@bot.command()
 async def urbdict(ctx, *, query: str):
     '''Gets a query from the popular urban dictionary'''
     term = query.replace(' ', '_')
