@@ -20,6 +20,7 @@ class Reddit(commands.Cog):
 
     @commands.command()
     async def reddit(self, ctx, subred: str, number: int):
+        
         if 1 <= number <= 35:
             x = range(number)
             for i in x:
@@ -36,23 +37,29 @@ class Reddit(commands.Cog):
                 name = randsub.title
 
                 x = ('ups: {}, downs: {}'.format(randsub.ups, randsub.downs))
-                
-                print(dir(randsub))               
+                              
                 url = randsub.url
                 ups = randsub.ups
+                downs = randsub.downs
                 sub = randsub.subreddit
                 auth = randsub.author
+                text = randsub.selftext
 
                 embed = discord.Embed(title=name)
                 embed.set_thumbnail(url=url)
                 embed.set_image(url = url)
-
+                
+                embed.add_field(name='Upvotes and downvotes', value=f'Up: {ups}, Down: {downs}')
                 embed.add_field(name='reddit', value=url)
                 embed.add_field(name='Subreddit', value=sub)
 
                 embed.set_footer(text=auth)
 
                 await ctx.send(embed = embed)
+                try:
+                    await ctx.send(text)
+                except discord.errors.HTTPException:
+                    await ctx.send('There is no text to send')
         elif number <= 0:
             await ctx.send(f'You sent for {number} reddit posts. That wont work because {number} is less than or equal to zero.')
     
