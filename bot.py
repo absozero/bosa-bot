@@ -256,13 +256,13 @@ async def youtube(ctx, num: int, *, search: str):
     search term in quotation marks like:"[Example search term]", which may be annoying and take 
     longer to type. The wierd syntax fixes this and makes it faster and easier with a little practice.
     usage:
-    -youtube [any whole number(including 0)] [your search term]'''
+    -youtube [any natural number] [your search term]'''
     searchy = search.replace(' ', '+')
     html = urllib.request.urlopen(f"https://www.youtube.com/results?search_query={searchy}")
     vid_id = re.findall(r"watch\?v=(\S{11})", html.read().decode())
 
     await ctx.send(f'This is the {num}th video found when searching for the term \'{search}\'.')
-    await ctx.send('https://www.youtube.com/watch?v=' + vid_id[num])
+    await ctx.send('https://www.youtube.com/watch?v=' + vid_id[num-1])
 
 
 
