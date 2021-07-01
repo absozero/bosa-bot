@@ -134,7 +134,7 @@ async def userinfo(ctx, member: discord.Member = None):
         
     roles = [role for role in member.roles]
     embed = discord.Embed(colour=discord.Colour.purple(), timestamp=ctx.message.created_at,
-                          title=f"User Info - {member}")
+                          title=f"User Info - {member}")                  
 
     embed.set_thumbnail(url=member.avatar_url)
     embed.set_footer(text=f"Requested by {ctx.author}")
@@ -167,7 +167,7 @@ async def channelinfo(ctx):
     embed.add_field(name="Channel's Hash'", value=hash(channel), inline=False)
 
     await ctx.send(embed=embed)
-
+    
 @bot.command()
 async def serverinfo(ctx):
     role_count = len(ctx.guild.roles)
@@ -186,6 +186,7 @@ async def serverinfo(ctx):
     embed.add_field(name='Highest Role', value=ctx.guild.roles[-2], inline=True)
     embed.add_field(name='Number of Roles', value=str(role_count), inline=True)
     embed.add_field(name='Bots', value=', '.join(bot_list), inline=True)
+    
 
     await ctx.send(embed=embed)
 
