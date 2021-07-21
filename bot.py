@@ -38,7 +38,7 @@ bot.sniped_messages = {}
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=Game(name="-help : Don't DM me I only work right in servers, not in DM's."))
+    await bot.change_presence(activity=Game(name="-help : Don't DM me, I only work right in servers, not in DM's."))
     now = datetime.now()
     print('We have logged in as {0.user}'.format(bot))
     print(f'Bot has been activated at {now.month}-{now.day}-{now.year} {now.hour}:{now.minute}:{now.second}.{now.microsecond}')
