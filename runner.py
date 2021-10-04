@@ -6,6 +6,13 @@ os.system('git pull https://github.com/absozero/BOSA-bot.git main')
 import os
 #Code to run the bot
 
+if os.path.isfile("requirements.txt"):
+        os.system("pip install -r requirements.txt")
+if platform == "linux" or platform == "linux2":
+        if os.path.isfile("requirements.txt"):
+                os.system("pip3 install -r requirements.txt")
+
+
 if os.path.isfile("bot.py"):
         os.system("python bot.py")
 if platform == "linux" or platform == "linux2":
