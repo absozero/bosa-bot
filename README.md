@@ -1,4 +1,4 @@
-# BOSA-bot
+# BOSA-bot!
 
 ![Logo](https://cdn.discordapp.com/avatars/844755365191352358/9d8fd75f36f5bd4e2866e6fcd8acac26.png?size=128)
 
