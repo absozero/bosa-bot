@@ -19,4 +19,4 @@ if platform == "linux" or platform == "linux2":
         if os.path.isfile("bot.py"):
                 os.system("python3 bot.py")
 else:
-    print('This file is in the wrong place, or bot.py file is not available. Make sure it is with the other files from the repo.')
+    print('This file is in the wrong place, or bot.py file is not available. Please Make sure it is with the other files from the repo.')
