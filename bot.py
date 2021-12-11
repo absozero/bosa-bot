@@ -155,6 +155,7 @@ async def channelinfo(ctx):
     channel = ctx.channel
     embed = discord.Embed(title=f"Channel stats for #**{channel.name}**", description=f"{'Category: {}'.format(channel.category.name) if channel.category else 'This channel is not in a category'}", color=0xff0000)
     embed.add_field(name="Channel's Guild", value=ctx.guild.name, inline=False)
+    
     embed.add_field(name="Channel Id#", value=channel.id, inline=False)
     embed.add_field(name="Channel's Topic", value=f"{channel.topic if channel.topic else 'No topic.'}", inline=False)
     embed.add_field(name="Channel Position in channels", value=channel.position, inline=True)

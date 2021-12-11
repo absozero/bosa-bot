@@ -1,4 +1,4 @@
-# Welcome to BOSA-bot docs
+# Intro
 
 This wil be the docs for bosa bot. Under construction.
 
