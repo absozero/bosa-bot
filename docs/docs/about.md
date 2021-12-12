@@ -1,4 +1,12 @@
-# This bot is currently being developed in:
+# TO DO
+* Add command categories
+* Add economy commands
+* Add help menu descriptions for all of the commands
+* Add aliases to commands
+* Add and find cool new commands to add
+* Find other stuff to put on the to do list
+
+# Information
 **Python version:**
 * _[3.9.6](https://www.python.org/downloads/)_
 ## It uses the modules:

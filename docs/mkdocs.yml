@@ -1,1 +1,7 @@
-site_name: My Docs
+site_name: BOSA-bot docs
+nav:
+  - Home: index.md
+  - Installation: Setup.md
+  - Bot link: bot-link.md
+  - Contribution: Contributions.md
+  - About: about.md

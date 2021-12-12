@@ -1,4 +1,4 @@
-# How to contribute
+# Contribution guide
 
 ### To help, you can do any of these things you like:
 
