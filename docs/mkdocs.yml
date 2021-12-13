@@ -1,7 +1,42 @@
 site_name: BOSA-bot docs
+repo_url: https://github.com/absozero/BOSA-bot
+site_url: https://absozero.github.io/BOSA-bot
 nav:
   - Home: index.md
-  - Installation: Setup.md
-  - Bot link: bot-link.md
-  - Contribution: Contributions.md
+  - Installation and usage:
+    - Setup: 'Running-bot\Setup.md'
+    - Bot link: 'Running-bot\bot-link.md'
+  - Contribution: Contribution.md
   - About: about.md
+
+edit_uri: tree/main/docs/docs
+
+plugins:
+  - git-revision-date
+  - search
+
+
+theme:
+  name: material
+  logo: img/icon.svg
+  favicon: img/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - header.autohide
+    - navigation.tracking
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+  palette:
+    - scheme: default
+      primary: teal
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: amber
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
