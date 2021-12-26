@@ -4,15 +4,16 @@ site_url: https://absozero.github.io/BOSA-bot
 nav:
   - Home: index.md
   - Installation and usage:
-    - Setup: 'Running-bot\Setup.md'
+    - Bot Setup: 'Running-bot\Setup.md'
     - Bot link: 'Running-bot\bot-link.md'
+    - Documentation setup: 'Running-bot/docs-setup.md'
   - Contribution: Contribution.md
   - About: about.md
 
 edit_uri: tree/main/docs/docs
 
 plugins:
-  - git-revision-date
+  - git-revision-date-localized
   - search
 
 

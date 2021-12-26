@@ -4,6 +4,5 @@
 
 ### Setup instructions: [Setup](Running-bot/Setup.md)
 
-### Help server on discord: [BOSA-bot server](https://discord.gg/tmFf5zt827)
+### Help server: [BOSA-bot server](https://discord.gg/tmFf5zt827)
 
-## T
