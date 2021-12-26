@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://absozero.github.io/BOSA-bot/</loc>
-         <lastmod>2021-12-13</lastmod>
+         <lastmod>2021-12-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://absozero.github.io/BOSA-bot/Contribution/</loc>
-         <lastmod>2021-12-13</lastmod>
+         <lastmod>2021-12-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://absozero.github.io/BOSA-bot/about/</loc>
-         <lastmod>2021-12-13</lastmod>
+         <lastmod>2021-12-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://absozero.github.io/BOSA-bot/Running-bot/Setup/</loc>
-         <lastmod>2021-12-13</lastmod>
+         <lastmod>2021-12-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://absozero.github.io/BOSA-bot/Running-bot/bot-link/</loc>
-         <lastmod>2021-12-13</lastmod>
+         <lastmod>2021-12-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://absozero.github.io/BOSA-bot/Running-bot/docs-setup/</loc>
+         <lastmod>2021-12-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
