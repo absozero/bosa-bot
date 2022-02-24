@@ -21,7 +21,7 @@ cd BOSA-bot
 - After the requirements have successfully installed, create an application on the discord developer portal 
   - [Discord developer portal](https://discord.com/developers/applications)
   - After creating a bot in the bot tab, copy the token by pressing the copy button
-  - ![Copy](https://cdn.discordapp.com/attachments/829239591952580651/845070279322370092/68747470733a2f2f73636f6e74656e742d6c6178332d312e63646e696e7374616772616d2e636f6d2f762f7435312e323838.png) 
+  - ![Copy](../img/token.png) 
 
 - Then, in the folder of the source code where bot.py is ***make a file called info.json.***
 
@@ -46,12 +46,12 @@ python3 runner.py
 ```
 - You could also just run **bot.py** from the main source code folder, it does the same thing. There is just more code to look at and if it fails to load there will be a long error message.
 
-![terminal](https://cdn.discordapp.com/attachments/829239591952580651/845095992504483910/unknown.png)
+![terminal](../img/terminal.png)
 
 
-![printedlines](https://cdn.discordapp.com/attachments/829239591952580651/845096493429817385/unknown.png)
+![printedlines](../img/lines.png)
 
 - _**To run the bot again, just run the "runner.py" file again using the instructions and guidelines mentioned at the beginning of this page.**_
 
-- If there are error messages, please open an issue on github.
+- If there are error messages, please open an [issue](https://github.com/absozero/bosa-bot/issues) on github.
 
