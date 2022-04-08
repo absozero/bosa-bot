@@ -8,7 +8,6 @@ import json
 import re
 import urllib
 from urllib import parse, request
-
 from discord.ext import tasks,commands
 from discord import Game, emoji
 from datetime import datetime
@@ -24,13 +23,11 @@ from datetime import datetime
 # Add and find cool new commands to add
 # Find other stuff to put on the to do list
 #-----------End List-------------------------------
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+with open("info.json") as file:
+    info = json.load(file)
+print(os.path.dirname(__file__))
 
-
-if not os.path.isfile("info.json"):
-    print("A info.json was not made. Make it and fill it with the correct parameters, please.")
-else:
-    with open("info.json") as file:
-        info = json.load(file)
 
 bot = commands.Bot(command_prefix = '-')
 bot.sniped_messages = {}
@@ -49,13 +46,12 @@ async def on_ready():
 ██████╦╝╚█████╔╝██████╔╝██║░░██║  ██████╦╝╚█████╔╝░░░██║░░░
 ╚═════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝  ╚═════╝░░╚════╝░░░░╚═╝░░░''')
 
-if os.path.exists("cogs"):
-    for filename in os.listdir('./cogs'):
-        if filename.endswith('.py'):
-            bot.load_extension(f'cogs.{filename[:-3]}')
-else:
-    print('There is no "cogs" folder found, make sure you have it! The bot will run without the cogs')
+dir = os.path.dirname(__file__) + '/cogs'
 
+for filename in os.listdir(dir):
+    os.chdir(dir)
+    if filename.endswith('.py') and filename != "__init__.py":
+        bot.load_extension(f'cogs.{filename[:-3]}')
 @bot.event
 async def on_message_delete(message):
     bot.sniped_messages[message.guild.id] = (message.content, message.author, message.channel.name, message.created_at)
@@ -267,5 +263,9 @@ async def youtube(ctx, num: int, *, search: str):
 
 
 #Token ----> goes right under 
-bot.run(info["token"])
-    
+def main():
+    bot.run(info["token"])
+
+
+if __name__ == '__main__':
+    main()
